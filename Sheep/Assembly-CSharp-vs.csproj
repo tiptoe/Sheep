@@ -46,10 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AI\IAnimalAI.cs" />
+     <Compile Include="Assets\Scripts\AI\SheepAI.cs" />
      <Compile Include="Assets\Scripts\AI\TestAI.cs" />
      <Compile Include="Assets\Scripts\AI\TestMoveObstacle.cs" />
+     <Compile Include="Assets\Scripts\AI\WolfAI.cs" />
+     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
      <Compile Include="Assets\Scripts\Controls\ChangeFenceColor.cs" />
      <Compile Include="Assets\Scripts\Controls\FenceDraw.cs" />
+     <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
+     <Compile Include="Assets\Scripts\Enums\Animals.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />

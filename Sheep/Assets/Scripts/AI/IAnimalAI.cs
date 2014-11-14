@@ -41,10 +41,9 @@ public interface IAnimalAI {
 
 
     /// <summary>
-    /// check if ai is colliding with something which can kill, if yes then return true
+    /// set object to dead
     /// </summary>
-    /// <returns></returns>
-    bool CheckDead();
+    void SetDead();
 
 
     /// <summary>
@@ -53,7 +52,7 @@ public interface IAnimalAI {
     void ChangeMood();
 
     /// <summary>
-    /// change state to given
+    /// change state to given state
     /// </summary>
     /// <param name="currentState"></param>
     void ChangeMood(AIStates newState);

@@ -1,6 +1,6 @@
 ﻿public enum AIStates {
-    //spoelečné
-    Normal = 0, Dead = -1,
+    //společné
+    Normal = 0, Dead = -1,endGame =6,
     //ovečka
     Interested = 4, Scared = 5,
     //vlk

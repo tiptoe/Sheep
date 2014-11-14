@@ -25,11 +25,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// random rozmezí pro změnu nálady
     /// </summary>
     public float moodChangeRange;
-    /// <summary>
-    /// pokud změnu nálady způsobý objekt (specální item, zájem ovečky o třeba kámen/jezero) tak se tímhle zajistí aby se při změně nálady ovečka vybrala něco jinýho
-    /// nový objekt zájmu
-    /// </summary>
-    public GameObject moodChangeObject;
+   
 
 
     private NavMeshAgent aiAgent;
@@ -55,7 +51,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// <summary>
     /// složí k tomu aby se neměli cíle moc brzy po sobě
     /// </summary>
-    private float helpNormalCounter = 1.0f;
+    private float helpMoodChangeCounter = 1.0f;
   
 
     // Use this for initialization
@@ -63,7 +59,8 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
         aiAgent = GetComponent<NavMeshAgent>();
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
-        ChangeMood();
+        ChangeTargetNormal();
+        // ChangeMood();
       //  aiAgent.SetDestination(new Vector3(-8.0f, 0, -5.0f));
       //  remainingDistance = aiAgent.remainingDistance;
 
@@ -76,9 +73,10 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
         if (lastMoodChange <= 0)
         {
-            //  ChangeTargetNormal();
+           
             ChangeMood();
         }
+        //tohle pro učely testování
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -104,11 +102,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     void UpdateNormal()
     {
         lastMoodChange = lastMoodChange - Time.deltaTime;
-        helpNormalCounter = helpNormalCounter- Time.deltaTime;
+        helpMoodChangeCounter = helpMoodChangeCounter- Time.deltaTime;
         
         if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 1.2f)
         {
-            Debug.Log("star moving - rotating complete");
+           // Debug.Log("star moving - rotating complete");
             aiAgent.updatePosition = true;
         }
         else
@@ -117,7 +115,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
         }
 
-        if (aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpNormalCounter <=0)
+        if (aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpMoodChangeCounter <=0)
         {
            ChangeTargetNormal();
         }
@@ -149,11 +147,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
 
         lastMoodChange = lastMoodChange - Time.deltaTime;
-        helpNormalCounter = helpNormalCounter - Time.deltaTime;
+        helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
 
         if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 0.6f)
         {
-            Debug.Log("star moving - rotating complete 2");
+           // Debug.Log("star moving - rotating complete 2");
             aiAgent.updatePosition = true;
         }
         else
@@ -162,7 +160,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
         }
 
-        if (aiAgent.remainingDistance <1.0f ||(aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpNormalCounter <= 0))
+        if (aiAgent.remainingDistance <1.0f ||(aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpMoodChangeCounter <= 0))
         {
            
            // ChangeTargetInterested();
@@ -182,7 +180,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         foreach (Collider col in colliders)
         {
             GameObjectInfo interestedGameObject = col.gameObject.GetComponent<GameObjectInfo>();
-            if (interestedGameObject != null)
+            if (interestedGameObject != null && interestedGameObject.gameObject != this.gameObject)
             {
                 count =count +interestedGameObject.sheepInterest;
                 interestingObjects.Add(interestedGameObject);
@@ -264,7 +262,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
         Debug.Log("scared target");
         Vector3 dir = this.transform.position - scaredThing;
-        dir = (dir.normalized) * 45.0f;
+        dir = (dir.normalized) * 80.0f;
         List<Vector3> possibleRuntargets = new List<Vector3>();
         float maxDistance =0;
         Vector3 maxVector = Vector3.forward;
@@ -309,7 +307,45 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         aiAgent.updatePosition = false;
         rotationHelp = transform.rotation.eulerAngles;
         remainingDistance = aiAgent.remainingDistance;
-        helpNormalCounter = 1.0f;
+        helpMoodChangeCounter = 1.0f;
+    }
+
+    /// <summary>
+    /// zde otestovat a dodělat nějaké komplikovanější přechody?
+    /// </summary>
+    public void ChangeMood()
+    {
+        // aiAgent.Resume();
+        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        if (sheepState == AIStates.Interested)
+        {
+            Debug.Log("normal state");
+            sheepState = AIStates.Normal;
+        }
+        else if (sheepState == AIStates.Normal)
+        {
+            Debug.Log("Interest state");
+            sheepState = AIStates.Interested;
+            ChangeTargetInterested();
+
+        }
+        else if (sheepState == AIStates.Scared)
+        {
+            Debug.Log("now not scared");
+            sheepState = AIStates.Normal;
+        }
+        //   aiAgent.Resume();
+        // ChangeTargetInterested();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="newState"></param>
+    public void ChangeMood(AIStates newState)
+    {
+        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        sheepState = newState;
     }
 
 
@@ -347,44 +383,13 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         //volám levem manager že je mrtvo
     }
 
-    public bool CheckDead()
+    public void SetDead()
     {
         throw new System.NotImplementedException();
     }
 
-    /// <summary>
-    /// zde otestovat a dodělat nějaké komplikovanější přechody?
-    /// </summary>
-    public void ChangeMood()
-    {
-       // aiAgent.Resume();
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
-        if (sheepState == AIStates.Interested)
-        {
-            Debug.Log("normal state");
-            sheepState = AIStates.Normal;
-        }
-        else if (sheepState == AIStates.Normal)
-        {
-            Debug.Log("Interest state");
-            sheepState = AIStates.Interested;
-            ChangeTargetInterested();
+  
 
-        }
-        else if (sheepState == AIStates.Scared)
-        {
-            Debug.Log("now not scared");
-            sheepState = AIStates.Normal;
-        }
-     //   aiAgent.Resume();
-       // ChangeTargetInterested();
-    }
-
-    public void ChangeMood( AIStates newState)
-    {
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
-        sheepState =newState;
-    }
 
 
 }

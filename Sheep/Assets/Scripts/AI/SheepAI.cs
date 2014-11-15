@@ -47,7 +47,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     public AIStates State { get { return sheepState; } set { sheepState = value; } }
 
    
-    private Vector3 rotationHelp;
+   // private Vector3 rotationHelp;
     /// <summary>
     /// složí k tomu aby se neměli cíle moc brzy po sobě
     /// </summary>
@@ -103,15 +103,22 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
         lastMoodChange = lastMoodChange - Time.deltaTime;
         helpMoodChangeCounter = helpMoodChangeCounter- Time.deltaTime;
-        
-        if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 1.2f)
+       // Vector3 targetDir =  new Vector3 (aiAgent.nextPosition.x,0,aiAgent.nextPosition.z) -  new Vector3 (transform.position.x,0,transform.position.z);
+        //Vector3 forward = transform.forward;
+       // Vector3 targetDir = aiAgent.nextPosition - transform.position;
+        if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
         {
-           // Debug.Log("star moving - rotating complete");
+            //transform.rotation.eulerAngles;
             aiAgent.updatePosition = true;
         }
         else
         {
-            rotationHelp = transform.rotation.eulerAngles;
+           // Vector3.Angle(cubeDir, player.forward)
+          //  rotationHelp = transform.rotation.eulerAngles;
+            /*Debug.Log(Vector3.RotateTowards(this.transform.forward, (aiAgent.nextPosition - transform.position), Mathf.Deg2Rad * 360.0f, 0.0f));
+            Debug.Log("---");
+            Debug.Log(this.transform.rotation.eulerAngles);
+            Debug.Log("---------------");*/
 
         }
 
@@ -149,14 +156,14 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         lastMoodChange = lastMoodChange - Time.deltaTime;
         helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
 
-        if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 0.6f)
+         if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) <0.5f)
         {
            // Debug.Log("star moving - rotating complete 2");
             aiAgent.updatePosition = true;
         }
         else
         {
-            rotationHelp = transform.rotation.eulerAngles;
+          //  rotationHelp = transform.rotation.eulerAngles;
 
         }
 
@@ -305,7 +312,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     private void NewtargetAquired()
     {
         aiAgent.updatePosition = false;
-        rotationHelp = transform.rotation.eulerAngles;
+      //  rotationHelp = transform.rotation.eulerAngles;
         remainingDistance = aiAgent.remainingDistance;
         helpMoodChangeCounter = 1.0f;
     }
@@ -385,7 +392,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void SetDead()
     {
-        throw new System.NotImplementedException();
+       
     }
 
   

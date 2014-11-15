@@ -52,7 +52,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public AIStates State { get { return wolfState; } set { wolfState = value; } }
 
-    private Vector3 rotationHelp;
+  //  private Vector3 rotationHelp;
     /// <summary>
     /// složí k tomu aby se neměli cíle moc brzy po sobě
     /// </summary>
@@ -92,14 +92,14 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         lastMoodChange = lastMoodChange - Time.deltaTime;
         helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
 
-        if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 1.2f)
+        if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
         {
             Debug.Log("star moving - rotating complete");
             aiAgent.updatePosition = true;
         }
         else
         {
-            rotationHelp = transform.rotation.eulerAngles;
+            //rotationHelp = transform.rotation.eulerAngles;
 
         }
 
@@ -138,14 +138,14 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         lastMoodChange = lastMoodChange - Time.deltaTime;
         helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
 
-        if (!aiAgent.updatePosition && Mathf.Abs(rotationHelp.y - transform.rotation.eulerAngles.y) < 0.6f)
+        if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
         {
             Debug.Log("star moving - rotating complete 2");
             aiAgent.updatePosition = true;
         }
         else
         {
-            rotationHelp = transform.rotation.eulerAngles;
+           // rotationHelp = transform.rotation.eulerAngles;
 
         }
 
@@ -250,6 +250,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     void UpdateFull()
     {
         aiAgent.SetDestination(transform.position);
+        lastMoodChange = lastMoodChange - Time.deltaTime;
+        helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
         // dělá animaci?
     }
 
@@ -257,7 +259,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     private void NewtargetAquired()
     {
         aiAgent.updatePosition = false;
-        rotationHelp = transform.rotation.eulerAngles;
+       // rotationHelp = transform.rotation.eulerAngles;
         remainingDistance = aiAgent.remainingDistance;
         helpMoodChangeCounter = 1.0f;
     }
@@ -300,6 +302,12 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         {
             Debug.Log("now not hunt");
             wolfState = AIStates.Normal;
+        }
+        else if (wolfState == AIStates.Full)
+        {
+            Debug.Log("again hungry");
+            wolfState = AIStates.Normal;
+
         }
     }
 
@@ -389,6 +397,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         {
             Debug.Log("snězena ovečka");
             ChangeMood(AIStates.Full);
+            sheep.SetDead();
+            Destroy(sheep.gameObject);
         }
         else
         {

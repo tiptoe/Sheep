@@ -55,11 +55,13 @@
      <Compile Include="Assets\Scripts\Controllers\GUIController.cs" />
      <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
-     <Compile Include="Assets\Scripts\GUI\ButtonRetryBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GUI\InGame\ButtonRetryBehaviour.cs" />
+     <Compile Include="Assets\Scripts\ObjectsBehaviour\BorderBehaviour.cs" />
+     <Compile Include="Assets\Scripts\ObjectsBehaviour\LagoonBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ActiveAreaEventManager.cs" />
-     <Compile Include="Assets\Scripts\Tools\BorderBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ChangeFenceColor.cs" />
      <Compile Include="Assets\Scripts\Tools\FenceDraw.cs" />
      <Compile Include="Assets\Scripts\Tools\Meat.cs" />

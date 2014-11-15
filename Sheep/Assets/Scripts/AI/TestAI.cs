@@ -26,7 +26,7 @@ public class TestAI : MonoBehaviour {
             }
             Vector3 destination =new Vector3( Random.Range(0,10)-5,0,Random.Range(0,10)-5);
             instance = (GameObject)Instantiate(dest, destination, new Quaternion());
-            Debug.Log(destination);
+            //Debug.Log(destination);
             //agent.destination = (destination);
             agent.SetDestination(destination);
         }

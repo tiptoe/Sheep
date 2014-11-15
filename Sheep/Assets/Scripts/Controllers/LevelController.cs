@@ -10,24 +10,28 @@ public class LevelController : MonoBehaviour {
 	public int WolfCount;
 	public int Score = 0;
 
+	public GUIController _GUIController;
+
 	private int aliveSheeps;
 	private int aliveWolves;
 
 	void Start()
 	{
+		Time.timeScale = 1;
 		aliveSheeps = SheepCount;
 		aliveWolves = WolfCount;
 	}
 
 	void Update()
 	{
+		if(Length <= 0 || aliveSheeps == 0)
+		{
+			Time.timeScale = 0;
+			_GUIController.EndRound();
+		}
+
 		Length -= Time.deltaTime;
 		Debug.Log((int)Length);
-
-		if(Length <= 0)
-		{
-			Debug.Log("End!");
-		}
 	}
 
     public void AddScore(int value)
@@ -47,9 +51,4 @@ public class LevelController : MonoBehaviour {
 				break;
 		}
     }
-
-	private void EndRound()
-	{
-
-	}
 }

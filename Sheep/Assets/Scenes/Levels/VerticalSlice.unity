@@ -2263,6 +2263,7 @@ GameObject:
   - 114: {fileID: 655052799}
   - 114: {fileID: 655052798}
   - 54: {fileID: 655052797}
+  - 82: {fileID: 655052804}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -2324,7 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepState: 0
-  controler: {fileID: 0}
+  controler: {fileID: 1887594588}
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
@@ -2387,6 +2388,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655052795}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &655052804
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655052795}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a1c6a0b6f0697d04f85fed70ffcce6fb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .300000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 130
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &665855083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,10 +3628,10 @@ Transform:
   m_LocalPosition: {x: -8.05000019, y: .5, z: 5.94999981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1887594587}
-  - {fileID: 1648885221}
   - {fileID: 1186536643}
   - {fileID: 1965711028}
+  - {fileID: 1887594587}
+  - {fileID: 1648885221}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1016996352
@@ -3604,7 +3663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1016996352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.83999991, y: 0, z: -20.7999992}
+  m_LocalPosition: {x: -3.00999999, y: 0, z: -20.7999992}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1.79999995}
   m_Children:
   - {fileID: 1081983126}
@@ -3638,8 +3697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wolfState: 0
-  controler: {fileID: 0}
-  observableArea: 15
+  controler: {fileID: 1887594588}
+  observableArea: 50
   moodChange: 7
   moodChangeRange: 1
   gameObjectTarget: {fileID: 0}
@@ -4626,7 +4685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1011138383}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!1 &1198506588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,6 +4834,7 @@ GameObject:
   - 114: {fileID: 1250385900}
   - 114: {fileID: 1250385899}
   - 54: {fileID: 1250385898}
+  - 82: {fileID: 1250385905}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -4836,7 +4896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepState: 0
-  controler: {fileID: 0}
+  controler: {fileID: 1887594588}
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
@@ -4899,6 +4959,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250385896}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1250385905
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250385896}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a1c6a0b6f0697d04f85fed70ffcce6fb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .300000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 130
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1253408438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,6 +5610,7 @@ GameObject:
   - 124: {fileID: 1648885218}
   - 81: {fileID: 1648885217}
   - 114: {fileID: 1648885222}
+  - 82: {fileID: 1648885223}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -5563,7 +5682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1011138383}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &1648885222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5575,8 +5694,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e675113b6c1961d40a2e06a2ed427615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fencePrefab: {fileID: 100000, guid: 6f3d0cbff8d43c64a8ded8401f77f35f, type: 2}
+  fencePrefab: {fileID: 100004, guid: d1833b0871467254dbb497afec5cf5a2, type: 2}
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
+--- !u!82 &1648885223
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648885216}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 5a6a225246573e44b8dcf4ec088e3a48, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .100000001
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1659587852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6674,6 +6851,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1887594587}
   - 114: {fileID: 1887594588}
+  - 82: {fileID: 1887594589}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -6692,7 +6870,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1011138383}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!114 &1887594588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6705,8 +6883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Length: 100
-  SpawnWolvesAt: 60
+  Length: 120
+  SpawnWolvesAt: 90
   Sheeps:
   - {fileID: 655052795}
   - {fileID: 1250385896}
@@ -6715,6 +6893,64 @@ MonoBehaviour:
   - {fileID: 1016996352}
   Score: 0
   _GUIController: {fileID: 1965711029}
+--- !u!82 &1887594589
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1887594586}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 6f52aee8e6465974886a4d09325b1d2b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .300000012
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 30
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1897921935
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,7 +7061,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1011138383}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!114 &1965711029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7404,6 +7640,7 @@ GameObject:
   - 114: {fileID: 2032642451}
   - 114: {fileID: 2032642450}
   - 54: {fileID: 2032642449}
+  - 82: {fileID: 2032642457}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -7451,7 +7688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepState: 0
-  controler: {fileID: 0}
+  controler: {fileID: 1887594588}
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
@@ -7528,6 +7765,64 @@ Transform:
   - {fileID: 466482938}
   m_Father: {fileID: 312669090}
   m_RootOrder: 2
+--- !u!82 &2032642457
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032642448}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a1c6a0b6f0697d04f85fed70ffcce6fb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .300000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 130
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2081752431
 GameObject:
   m_ObjectHideFlags: 0

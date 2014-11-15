@@ -86,7 +86,9 @@ public class FenceDraw : MonoBehaviour
     /// </summary>
     void CreatePrecisionObstacle()
     {
-        //smažu předchozí překážky
+		audio.Play();
+        
+		//smažu předchozí překážky
         foreach (GameObject gO in obstacles)
         {
             Destroy(gO);
@@ -95,6 +97,7 @@ public class FenceDraw : MonoBehaviour
         {
             g = new GameObject("obstacles parent");
         }
+
        /* foreach (GameObject go in obstacles)
         {
             go.transform.parent = g.transform;
@@ -107,7 +110,8 @@ public class FenceDraw : MonoBehaviour
         Vector3 startObstaclesPosition = startPosition;
         //první bude vždy na začátku
         created = (GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion());
-        obstacles.Add(created);
+		created.GetComponent<MeshRenderer>().enabled = false;
+		obstacles.Add(created);
         created.transform.parent = g.transform;
         
         startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
@@ -115,13 +119,15 @@ public class FenceDraw : MonoBehaviour
         {
            //několik mezitim
             created = (GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion());
-            obstacles.Add(created);
+			created.GetComponent<MeshRenderer>().enabled = false;
+			obstacles.Add(created);
             created.transform.parent = g.transform;
            startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
         }
         //poslední bude vždy na konci
         created = (GameObject)GameObject.Instantiate(fenceObstacle, endPosition, new Quaternion());
-        obstacles.Add(created);
+		created.GetComponent<MeshRenderer>().enabled = false;
+		obstacles.Add(created);
         created.transform.parent = g.transform;
         startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
        

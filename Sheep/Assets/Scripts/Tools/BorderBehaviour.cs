@@ -9,7 +9,7 @@ public class BorderBehaviour : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Sheep")
 		{
-			Debug.Log("SHEEEEEEEEEEEP");
+			collision.gameObject.GetComponent<SheepAI>().SetDead();
 			collision.gameObject.SetActive(false);
 			_LevelController.AnimalDied(Animals.Sheep);
 		}

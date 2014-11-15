@@ -51,11 +51,15 @@ public class LevelController : MonoBehaviour {
         switch(animal)
 		{
 			case Animals.Wolf:
+			{
 				--aliveWolves;
 				break;
+			}
 			case Animals.Sheep:
+			{
 				--aliveSheeps;
 				break;
+			}
 		}
     }
 

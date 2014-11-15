@@ -398,6 +398,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             Debug.Log("snězena ovečka");
             ChangeMood(AIStates.Full);
             sheep.SetDead();
+			controler.AnimalDied(Animals.Sheep);
             Destroy(sheep.gameObject);
         }
         else

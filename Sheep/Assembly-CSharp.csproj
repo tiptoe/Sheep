@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\AI\TestAI.cs" />
      <Compile Include="Assets\Scripts\AI\TestMoveObstacle.cs" />
      <Compile Include="Assets\Scripts\AI\WolfAI.cs" />
+     <Compile Include="Assets\Scripts\Controllers\GUIController.cs" />
      <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />

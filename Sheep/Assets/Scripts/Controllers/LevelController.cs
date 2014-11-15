@@ -8,10 +8,10 @@ public class LevelController : MonoBehaviour {
 	public float Length = 120;
 	public int SheepCount;
 	public int WolfCount;
+	public int Score = 0;
 
 	private int aliveSheeps;
 	private int aliveWolves;
-	private int score = 0;
 
 	void Start()
 	{
@@ -32,7 +32,7 @@ public class LevelController : MonoBehaviour {
 
     public void AddScore(int value)
     {
-		score += value;
+		Score += value;
     }
 
     public void AnimalDied(Animals animal)

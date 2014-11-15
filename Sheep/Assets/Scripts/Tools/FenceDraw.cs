@@ -16,6 +16,8 @@ public class FenceDraw : MonoBehaviour
     GameObject fenceGhost;
     ChangeFenceColor fenceGhostScript;
 
+    private GameObject g;
+
     void Awake()
     {
         Initialize();
@@ -89,21 +91,39 @@ public class FenceDraw : MonoBehaviour
         {
             Destroy(gO);
         }
+        if (g == null)
+        {
+            g = new GameObject("obstacles parent");
+        }
+       /* foreach (GameObject go in obstacles)
+        {
+            go.transform.parent = g.transform;
+
+        }*/
+        GameObject created;
         //vzdálenost, počet malých překážek které je potřeba umístit
         float dinstance = Vector3.Distance(startPosition, endPosition);
         float smallerObstaclesCount = dinstance / (0.5f);
         Vector3 startObstaclesPosition = startPosition;
         //první bude vždy na začátku
-        obstacles.Add((GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion()));
+        created = (GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion());
+        obstacles.Add(created);
+        created.transform.parent = g.transform;
+        
         startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
         for (int i = 0; i < smallerObstaclesCount-1; i++)
         {
            //několik mezitim
-            obstacles.Add((GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion()));
+            created = (GameObject)GameObject.Instantiate(fenceObstacle, startObstaclesPosition, new Quaternion());
+            obstacles.Add(created);
+            created.transform.parent = g.transform;
            startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
         }
         //poslední bude vždy na konci
-        obstacles.Add((GameObject)GameObject.Instantiate(fenceObstacle, endPosition, new Quaternion()));
+        created = (GameObject)GameObject.Instantiate(fenceObstacle, endPosition, new Quaternion());
+        obstacles.Add(created);
+        created.transform.parent = g.transform;
         startObstaclesPosition = Vector3.MoveTowards(startObstaclesPosition, endPosition, 0.5f);
+       
     }
 }

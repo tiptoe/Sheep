@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
      <Compile Include="Assets\Scripts\GUI\ButtonRetryBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ActiveAreaEventManager.cs" />
+     <Compile Include="Assets\Scripts\Tools\BorderBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ChangeFenceColor.cs" />
      <Compile Include="Assets\Scripts\Tools\FenceDraw.cs" />
      <Compile Include="Assets\Scripts\Tools\Meat.cs" />

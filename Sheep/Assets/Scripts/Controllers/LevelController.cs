@@ -5,21 +5,22 @@ public class LevelController : MonoBehaviour {
 
 
 	public int Id = 0;
-	public float Length = 120;
-	public int SheepCount;
-	public int WolfCount;
+	public float Length = 60;
+	public float SpawnWolvesAt = 30;
+
+	public GameObject[] Sheeps;
+	public GameObject[] Wolves;
+	private int aliveSheeps = 0;
+	private int aliveWolves = 0;
 	public int Score = 0;
 
 	public GUIController _GUIController;
 
-	private int aliveSheeps;
-	private int aliveWolves;
-
 	void Start()
 	{
+		aliveSheeps = Sheeps.Length;
+		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
-		aliveSheeps = SheepCount;
-		aliveWolves = WolfCount;
 	}
 
 	void Update()
@@ -28,6 +29,12 @@ public class LevelController : MonoBehaviour {
 		{
 			Time.timeScale = 0;
 			_GUIController.EndRound();
+		}
+
+		if(Length <= SpawnWolvesAt)
+		{
+			SpawnWolves();
+			SpawnWolvesAt = -1;
 		}
 
 		Length -= Time.deltaTime;
@@ -51,4 +58,12 @@ public class LevelController : MonoBehaviour {
 				break;
 		}
     }
+
+	private void SpawnWolves()
+	{
+		foreach (var wolf in Wolves)
+		{
+			wolf.SetActive(true);
+		}
+	}
 }

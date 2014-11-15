@@ -268,7 +268,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     void ChangeTargetScared( Vector3 scaredThing)
     {
         Debug.Log("scared target");
-        Vector3 dir = this.transform.position - scaredThing;
+		Vector3 dir = this.transform.position - scaredThing;
         dir = (dir.normalized) * 80.0f;
         List<Vector3> possibleRuntargets = new List<Vector3>();
         float maxDistance =0;

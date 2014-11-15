@@ -14,10 +14,10 @@ public class ChangeFenceColor : MonoBehaviour
 
     public void SetGhostFence()
     {
+		SetGreen();
         isGhostFence = true;
         transform.collider.isTrigger = true;
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = false;
-        SetGreen();
     }
 
     void Update()
@@ -29,13 +29,14 @@ public class ChangeFenceColor : MonoBehaviour
                 SetRed();
             else
                 SetGreen();
-        } 
+        }
     }
 
     void OnTriggerEnter(Collider other) 
     {
         // if it is a ghost fence
-        if (isGhostFence)
+        if (isGhostFence && !other.CompareTag("Background")
+		    			 && !other.CompareTag("Interest"))
         {
             inCollision = true;
             SetRed();
@@ -45,7 +46,8 @@ public class ChangeFenceColor : MonoBehaviour
 
     void OnTriggerExit(Collider other) 
     {
-        if (transform.collider.isTrigger)
+        //if (transform.collider.isTrigger)
+		if (isGhostFence)
         {
             inCollision = false;
             SetGreen();

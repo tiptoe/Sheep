@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class LevelController : MonoBehaviour {
-
-
 	public int Id = 0;
 	public float Length = 60;
 	public float SpawnWolvesAt = 30;
@@ -15,9 +13,11 @@ public class LevelController : MonoBehaviour {
 	public int Score = 0;
 
 	public GUIController _GUIController;
+	private GameController _GameController;
 
 	void Start()
 	{
+		//_GameController = FindGameController();
 		aliveSheeps = Sheeps.Length;
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
@@ -62,6 +62,18 @@ public class LevelController : MonoBehaviour {
 			}
 		}
     }
+
+	public GameController FindGameController()
+	{
+		GameObject gameControllerObject = GameObject.Find("GameController");
+		if(gameControllerObject != null)
+		{
+			return gameControllerObject.GetComponent<GameController>();
+		}else
+		{
+			return new GameController();
+		}
+	}
 
 	private void SpawnWolves()
 	{

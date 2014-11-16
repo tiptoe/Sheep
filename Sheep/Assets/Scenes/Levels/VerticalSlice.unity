@@ -2264,6 +2264,7 @@ GameObject:
   - 114: {fileID: 655052798}
   - 54: {fileID: 655052797}
   - 82: {fileID: 655052804}
+  - 114: {fileID: 655052805}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -2446,6 +2447,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &655052805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655052795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &665855083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,6 +3662,7 @@ GameObject:
   - 114: {fileID: 1016996356}
   - 114: {fileID: 1016996355}
   - 54: {fileID: 1016996354}
+  - 114: {fileID: 1016996361}
   m_Layer: 0
   m_Name: BigBadWolf
   m_TagString: Wolf
@@ -3774,6 +3788,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1016996352}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1016996361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016996352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &1056973875
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4861,7 @@ GameObject:
   - 114: {fileID: 1250385899}
   - 54: {fileID: 1250385898}
   - 82: {fileID: 1250385905}
+  - 114: {fileID: 1250385906}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -5017,6 +5044,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1250385906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250385896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &1253408438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5611,6 +5650,7 @@ GameObject:
   - 81: {fileID: 1648885217}
   - 114: {fileID: 1648885222}
   - 82: {fileID: 1648885223}
+  - 114: {fileID: 1648885224}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -5754,6 +5794,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1648885224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648885216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &1659587852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,6 +6904,7 @@ GameObject:
   - 4: {fileID: 1887594587}
   - 114: {fileID: 1887594588}
   - 82: {fileID: 1887594589}
+  - 114: {fileID: 1887594590}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -6951,6 +7004,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1887594590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1887594586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64827909e51a4041bba149fdd49ae5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &1897921935
 GameObject:
   m_ObjectHideFlags: 0
@@ -7641,6 +7706,7 @@ GameObject:
   - 114: {fileID: 2032642450}
   - 54: {fileID: 2032642449}
   - 82: {fileID: 2032642457}
+  - 114: {fileID: 2032642458}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -7823,6 +7889,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &2032642458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032642448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1887594588}
 --- !u!1 &2081752431
 GameObject:
   m_ObjectHideFlags: 0

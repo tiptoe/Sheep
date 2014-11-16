@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
+
+	public GameController _GameController;
 
 	public RectTransform Start;
 	public RectTransform Play;
@@ -16,7 +19,7 @@ public class MainMenuController : MonoBehaviour {
 
 	public void ChangeToPlay(RectTransform activePage)
 	{
-		Application.LoadLevel("VerticalSlice");
+		_GameController.LoadLevel("VerticalSlice");
 		//activePage.gameObject.SetActive(false);
 		//Play.gameObject.SetActive(true);
 	}
@@ -31,5 +34,20 @@ public class MainMenuController : MonoBehaviour {
 	{
 		activePage.gameObject.SetActive(false);
 		About.gameObject.SetActive(true);
+	}
+
+	public void SetAudio(Toggle toggle)
+	{
+		_GameController.IsAudio = toggle.isOn;
+	}
+	
+	public void SetMusicVolume(Slider volumeSlider)
+	{
+		_GameController.MusicVolume = (int)volumeSlider.value;
+	}
+	
+	public void SetSoundsVolume(Slider volumeSlider)
+	{
+		_GameController.SoundsVolume = (int)volumeSlider.value;
 	}
 }

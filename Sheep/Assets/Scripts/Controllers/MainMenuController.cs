@@ -6,15 +6,27 @@ public class MainMenuController : MonoBehaviour {
 
 	public GameController _GameController;
 
-	public RectTransform Start;
+	public RectTransform StartPanel;
 	public RectTransform Play;
 	public RectTransform Options;
 	public RectTransform About;
 
+	public Toggle AudioToggle;
+	public Slider AudioBackgroundSlider;
+	public Slider AudioSoundsSlider;
+
+	void Start()
+	{
+		_GameController = GameObject.Find("GameController").GetComponent<GameController>();
+		AudioToggle.isOn = _GameController.IsAudio;
+		AudioBackgroundSlider.value = _GameController.MusicVolume;
+		AudioSoundsSlider.value = _GameController.SoundsVolume;
+	}
+
 	public void ChangeToStart(RectTransform activePage)
 	{
 		activePage.gameObject.SetActive(false);
-		Start.gameObject.SetActive(true);
+		StartPanel.gameObject.SetActive(true);
 	}
 
 	public void ChangeToPlay(RectTransform activePage)

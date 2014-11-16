@@ -2135,10 +2135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _GameController: {fileID: 1346534744}
-  Start: {fileID: 1036796158}
+  StartPanel: {fileID: 1036796158}
   Play: {fileID: 360956187}
   Options: {fileID: 1815755300}
   About: {fileID: 1572635339}
+  AudioToggle: {fileID: 217014445}
+  AudioBackgroundSlider: {fileID: 305242307}
+  AudioSoundsSlider: {fileID: 336162404}
 --- !u!4 &1410772106
 Transform:
   m_ObjectHideFlags: 0

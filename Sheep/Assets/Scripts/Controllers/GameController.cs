@@ -10,9 +10,26 @@ public class GameController : MonoBehaviour {
 	[Range(0,100)]
 	public int SoundsVolume = 75;
 
+	//prevent doubling
+	static GameController instance;
+
 	void Awake()
 	{
-		DontDestroyOnLoad(this);
+		//GameObject otherGameController = GameObject.Find("GameController");
+
+		if(instance)
+		{
+			Destroy(gameObject);
+		}else
+		{
+			instance = this;
+			DontDestroyOnLoad(this);
+		}
+	}
+
+	void Start()
+	{
+
 	}
 
 	public void LoadLevel(string levelName)

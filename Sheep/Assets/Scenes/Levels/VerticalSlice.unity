@@ -8671,7 +8671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Length: 10
+  Length: 120
   SpawnWolvesAt: 90
   Sheeps:
   - {fileID: 655052795}

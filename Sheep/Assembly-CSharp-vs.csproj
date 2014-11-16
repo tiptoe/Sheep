@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\Controllers\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
-     <Compile Include="Assets\Scripts\GUI\InGame\ButtonRetryBehaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\BorderBehaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\LagoonBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ActiveAreaEventManager.cs" />

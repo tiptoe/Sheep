@@ -13,11 +13,11 @@ public class LevelController : MonoBehaviour {
 	public int Score = 0;
 
 	public GUIController _GUIController;
-	private GameController _GameController;
+	public GameController _GameController;
 
 	void Start()
 	{
-		//_GameController = FindGameController();
+		_GameController = FindGameController();
 		aliveSheeps = Sheeps.Length;
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
@@ -71,7 +71,12 @@ public class LevelController : MonoBehaviour {
 			return gameControllerObject.GetComponent<GameController>();
 		}else
 		{
-			return new GameController();
+			gameControllerObject = new GameObject();
+			gameControllerObject.name = "GameController";
+			gameControllerObject.AddComponent<GameController>();
+			//Instantiate(gameControllerObject);
+
+			return gameControllerObject.GetComponent<GameController>();
 		}
 	}
 

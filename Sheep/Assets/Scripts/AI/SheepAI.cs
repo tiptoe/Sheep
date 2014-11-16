@@ -392,7 +392,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void SetDead()
     {
-		AudioSource.PlayClipAtPoint(audio.clip,transform.position);
+		AudioSource.PlayClipAtPoint(audio.clip,transform.position,audio.volume);
     }
 
   

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Meat : SingleTouchTool {
+public class Meat : SingleTouchTool 
+{
 
     
 }

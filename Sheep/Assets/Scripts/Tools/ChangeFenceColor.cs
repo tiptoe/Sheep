@@ -9,7 +9,7 @@ public class ChangeFenceColor : MonoBehaviour
     public Color green = Color.green;
 
     public bool IsRed { get; private set; }
-    bool inCollision = false;
+    int collisions = 0;
     bool isGhostFence = false;
 
     public void SetGhostFence()
@@ -22,10 +22,10 @@ public class ChangeFenceColor : MonoBehaviour
 
     void Update()
     {
-        if (isGhostFence && !inCollision) 
+        if (isGhostFence) 
         {
             float length = transform.parent.localScale.z;
-            if (length < minLength || length > maxLength)
+            if (length < minLength || length > maxLength || collisions != 0)
                 SetRed();
             else
                 SetGreen();
@@ -38,7 +38,8 @@ public class ChangeFenceColor : MonoBehaviour
         if (isGhostFence && !other.CompareTag("Background")
 		    			 && !other.CompareTag("Interest"))
         {
-            inCollision = true;
+            collisions++;
+            Debug.Log("collisions: " + collisions);
             SetRed();
         }
             
@@ -49,10 +50,10 @@ public class ChangeFenceColor : MonoBehaviour
         //if (transform.collider.isTrigger)
 		if (isGhostFence)
         {
-            inCollision = false;
+            collisions--;
+            Debug.Log("collisions: " + collisions);
             SetGreen();
-        }
-            
+        }       
     }
 
     void SetGreen()

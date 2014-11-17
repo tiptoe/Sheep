@@ -54,8 +54,8 @@ public class FenceDraw : MonoBehaviour
 
     void UpdatePosition(GameObject fence, Vector3 startPosition, Vector3 endPosition)
     {
-        Debug.Log("start:" + startPosition);
-        Debug.Log("end:" + endPosition);
+        //Debug.Log("start:" + startPosition);
+        //Debug.Log("end:" + endPosition);
         fence.transform.position = startPosition;
         fence.transform.LookAt(endPosition);
         fence.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, Vector3.Distance(startPosition, endPosition));

@@ -55,5 +55,5 @@ public interface IAnimalAI {
     /// change state to given state
     /// </summary>
     /// <param name="currentState"></param>
-    void ChangeMood(AIStates newState);
+    void ChangeMood(AIStates newState,float moodTime=0);
 }

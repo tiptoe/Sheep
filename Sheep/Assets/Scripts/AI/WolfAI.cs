@@ -82,7 +82,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             case AIStates.Normal: UpdateNormal(); break;
             case AIStates.Tracking: UpdateTracking(); break;
             case AIStates.Hunting: UpdateHunting(); break;
-            case AIStates.Full: UpdateFull(); break;
+            case AIStates.Eat: UpdateFull(); break;
         }
     }
 
@@ -272,7 +272,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     {
         Debug.Log("change mood??");
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
-        if (wolfState != AIStates.Full || wolfState != AIStates.Hunting)
+        if (wolfState != AIStates.Eat || wolfState != AIStates.Hunting)
         {
             GameObject target = FindFood();
             if (target != null)
@@ -303,7 +303,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             Debug.Log("now not hunt");
             wolfState = AIStates.Normal;
         }
-        else if (wolfState == AIStates.Full)
+        else if (wolfState == AIStates.Eat)
         {
             Debug.Log("again hungry");
             wolfState = AIStates.Normal;
@@ -311,7 +311,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         }
     }
 
-    public void ChangeMood(AIStates newState)
+    public void ChangeMood(AIStates newState, float moodTime = 0)
     {
         wolfState = newState;
     }
@@ -396,7 +396,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         if (sheep != null)
         {
             Debug.Log("snězena ovečka");
-            ChangeMood(AIStates.Full);
+            ChangeMood(AIStates.Eat);
             sheep.SetDead();
 			controler.AnimalDied(Animals.Sheep);
             Destroy(sheep.gameObject);

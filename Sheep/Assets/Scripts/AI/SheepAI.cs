@@ -95,6 +95,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             case AIStates.Normal: UpdateNormal(); break;
             case AIStates.Interested: UpdateInterested(); break;
             case AIStates.Scared: UpdateScared(); break;
+            case AIStates.Eat: UpdateEat(); break;
         }
     }
 
@@ -264,6 +265,18 @@ public class SheepAI : MonoBehaviour, IAnimalAI
      
     }
 
+    void UpdateEat()
+    {
+
+        if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
+        {
+            // Debug.Log("star moving - rotating complete 2");
+            aiAgent.updatePosition = true;
+        }
+        lastMoodChange = lastMoodChange - Time.deltaTime * 1.0f;
+       
+    }
+
 
     void ChangeTargetScared( Vector3 scaredThing)
     {
@@ -341,6 +354,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             Debug.Log("now not scared");
             sheepState = AIStates.Normal;
         }
+        else if (sheepState == AIStates.Eat)
+        {
+            Debug.Log("end eating");
+            sheepState = AIStates.Normal;
+        }
         //   aiAgent.Resume();
         // ChangeTargetInterested();
     }
@@ -349,9 +367,16 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// 
     /// </summary>
     /// <param name="newState"></param>
-    public void ChangeMood(AIStates newState)
+    public void ChangeMood(AIStates newState, float moodTime=0)
     {
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        if (moodTime == 0)
+        {
+            lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        }
+        else
+        {
+            lastMoodChange = moodTime;
+        }
         sheepState = newState;
     }
 
@@ -376,7 +401,12 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void SetTarget(Vector3 position, float priority)
     {
-        throw new System.NotImplementedException();
+        if (priority >= 1.0f)
+        {
+            vectorTarget = position;
+            aiAgent.SetDestination(position);
+            NewtargetAquired();
+        }
     }
 
     public void SetTarget(GameObject goal, float priority)

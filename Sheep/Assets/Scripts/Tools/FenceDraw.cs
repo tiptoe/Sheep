@@ -69,7 +69,7 @@ public class FenceDraw : MonoBehaviour
 
         fenceGhost = (GameObject)Instantiate(fencePrefab);
         fenceGhostScript = fenceGhost.transform.GetChild(0).GetComponent<ChangeFenceColor>();
-        fenceGhostScript.SetGhostFence();
+        fenceGhostScript.SetGhostFence(1f,4f);
         HideFence(fenceGhost);
         Debug.Log("Ghost fence created.");
     }

@@ -19,7 +19,7 @@ public abstract class SingleTouchTool : Tool {
             Instantiate(toolPrefab, position, Quaternion.identity);
             amount--;
             UpdateAmount();
-            //levelController.AddScore(score);
+            levelController.AddScore(score);
         }
     }
 }

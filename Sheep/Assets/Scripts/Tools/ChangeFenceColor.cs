@@ -3,21 +3,30 @@ using System.Collections;
 
 public class ChangeFenceColor : MonoBehaviour
 {
-    public float minLength = 1;
-    public float maxLength = 8;
+    
     public Color red = Color.red;
     public Color green = Color.green;
+
+    float minLength;
+    float maxLength;
 
     public bool IsRed { get; private set; }
     int collisions = 0;
     bool isGhostFence = false;
 
-    public void SetGhostFence()
+    //TODO: remake ghost fence
+    public SpriteRenderer fencePlank;
+    public SpriteRenderer fenceStart;
+    public SpriteRenderer fenceEnd;
+
+    public void SetGhostFence(float minLength, float maxLength)
     {
 		SetGreen();
         isGhostFence = true;
         transform.collider.isTrigger = true;
-        transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = false;
+        this.minLength = minLength;
+        this.maxLength = maxLength;
+        //transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = false;
     }
 
     void Update()
@@ -39,10 +48,9 @@ public class ChangeFenceColor : MonoBehaviour
 		    			 && !other.CompareTag("Interest"))
         {
             collisions++;
-            Debug.Log("collisions: " + collisions);
+            //Debug.Log("collisions: " + collisions);
             SetRed();
-        }
-            
+        }      
     }
 
     void OnTriggerExit(Collider other) 
@@ -58,14 +66,13 @@ public class ChangeFenceColor : MonoBehaviour
 
     void SetGreen()
     {
-        transform.renderer.material.color = green;
-        IsRed = false;
-        
+        fenceStart.color = fenceEnd.color = fencePlank.color = green;
+        IsRed = false; 
     }
 
     void SetRed()
     {
-        transform.renderer.material.color = red;
+        fenceStart.color = fenceEnd.color = fencePlank.color = red;
         IsRed = true;
     }
 

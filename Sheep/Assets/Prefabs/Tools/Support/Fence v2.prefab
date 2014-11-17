@@ -154,10 +154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a9ce5ac4063824aa284afcd9d2be65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minLength: 1
-  maxLength: 8
   red: {r: 1, g: 0, b: 0, a: 1}
   green: {r: 0, g: 1, b: 0, a: 1}
+  fencePlank: {fileID: 0}
+  fenceStart: {fileID: 0}
+  fenceEnd: {fileID: 0}
 --- !u!208 &20800000
 NavMeshObstacle:
   m_ObjectHideFlags: 1

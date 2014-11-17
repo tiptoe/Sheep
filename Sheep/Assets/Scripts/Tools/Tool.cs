@@ -13,7 +13,7 @@ public abstract class Tool : MonoBehaviour
 
     Toggle toggle;
     Text amountText;
-    LevelController levelController;
+    protected LevelController levelController;
 
     protected abstract void Listening(bool value);
 
@@ -21,7 +21,7 @@ public abstract class Tool : MonoBehaviour
     {
         toggle = GetComponent<Toggle>();
         amountText = GetComponentInChildren<Text>();
-        //levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
+        levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
 
         if (toggle == null)
             throw new System.NullReferenceException("toggle component missing");
@@ -51,8 +51,17 @@ public abstract class Tool : MonoBehaviour
         Listening(false);
     }
 
-    void DeactivateToggle()
+    public void ActivateToggle()
+    {
+        toggle.interactable = true;
+        if (toggle.isOn)
+            Listening(true);
+        UpdateAmount();  
+    } 
+
+    public void DeactivateToggle()
     {
         toggle.interactable = false;
+        Listening(false);
     } 
 }

@@ -58,12 +58,15 @@
      <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MainMenuController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ToolsController.cs" />
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
      <Compile Include="Assets\Scripts\Objects\BorderBehaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\LagoonBehaviour.cs" />
      <Compile Include="Assets\Scripts\Tools\ActiveAreaEventManager.cs" />
      <Compile Include="Assets\Scripts\Tools\ChangeFenceColor.cs" />
+     <Compile Include="Assets\Scripts\Tools\DragTool.cs" />
+     <Compile Include="Assets\Scripts\Tools\Fence.cs" />
      <Compile Include="Assets\Scripts\Tools\FenceDraw.cs" />
      <Compile Include="Assets\Scripts\Tools\Meat.cs" />
      <Compile Include="Assets\Scripts\Tools\SingleTouchTool.cs" />

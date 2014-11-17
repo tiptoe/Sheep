@@ -11,6 +11,12 @@ public class GUIController : MonoBehaviour {
 	public GameObject PauseMenu;
 	public GameObject EndRoundMenu;	
 
+	public Sprite RewardON;
+	public Sprite RewardOFF;
+	public GameObject Reward1;
+	public GameObject Reward2;
+	public GameObject Reward3;
+
 	public Toggle AudioToggle;
 	public Slider AudioBackgroundSlider;
 	public Slider AudioSoundsSlider;
@@ -30,8 +36,21 @@ public class GUIController : MonoBehaviour {
 		//Score.GetComponent<Text>().text = "SCORE: " + _LevelController.Score;
 	}
 
-	public void EndRound()
+	public void EndRound(int rewards = 3)
 	{
+		if(rewards > 0)
+		{
+			Reward1.GetComponent<Image>().sprite = RewardON;
+			if(rewards > 1)
+			{
+				Reward2.GetComponent<Image>().sprite = RewardON;
+				if(rewards > 2)
+				{
+					Reward3.GetComponent<Image>().sprite = RewardON;
+				}
+			}
+		}
+
 		EndRoundMenu.SetActive(true);
 	}
 

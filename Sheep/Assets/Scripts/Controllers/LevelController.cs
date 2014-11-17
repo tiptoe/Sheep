@@ -28,7 +28,7 @@ public class LevelController : MonoBehaviour {
 		if(Length <= 0 || aliveSheeps == 0)
 		{
 			Time.timeScale = 0;
-			_GUIController.EndRound();
+			EndRound();
 		}
 
 		if(Length <= SpawnWolvesAt)
@@ -78,6 +78,11 @@ public class LevelController : MonoBehaviour {
 
 			return gameControllerObject.GetComponent<GameController>();
 		}
+	}
+
+	private void EndRound()
+	{
+		_GUIController.EndRound(aliveSheeps);
 	}
 
 	private void SpawnWolves()

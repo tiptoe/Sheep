@@ -59,7 +59,7 @@ public class Fence : DragTool {
             UpdatePosition(fenceSolid);
             CreatePrecisionObstacle();
             levelController.AddScore(score);
-            //audio.Play();
+            audio.Play();
         }
     }
 

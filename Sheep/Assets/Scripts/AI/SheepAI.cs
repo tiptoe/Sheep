@@ -42,7 +42,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// </summary>
     private float remainingDistance;
 
-    private float speed = 2.0f;
+    public float speed = 2.0f;
 
     public AIStates State { get { return sheepState; } set { sheepState = value; } }
 

@@ -1598,7 +1598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &309847093
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,6 +1645,7 @@ MonoBehaviour:
   moodChange: 7
   moodChangeRange: 1
   gameObjectTarget: {fileID: 0}
+  speed: 1
 --- !u!114 &309847096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,7 +1667,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 309847092}
   m_Enabled: 1
   m_Radius: .600000024
-  m_Speed: .800000012
+  m_Speed: 1
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 110
@@ -4821,6 +4822,7 @@ MonoBehaviour:
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
+  speed: 2
 --- !u!195 &811205438
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7726,6 +7728,7 @@ MonoBehaviour:
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
+  speed: 2
 --- !u!195 &1491460878
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8148,6 +8151,7 @@ MonoBehaviour:
   observableArea: 15
   moodChange: 6
   moodChangeRange: 1
+  speed: 2
 --- !u!195 &1566611072
 NavMeshAgent:
   m_ObjectHideFlags: 0

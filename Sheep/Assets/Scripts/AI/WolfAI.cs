@@ -48,7 +48,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     /// </summary>
     private float remainingDistance;
 
-    private float speed = 2.7f;
+    public float speed = 2.7f;
 
     public AIStates State { get { return wolfState; } set { wolfState = value; } }
 

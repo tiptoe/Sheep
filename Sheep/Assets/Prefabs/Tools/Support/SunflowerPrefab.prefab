@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400006}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SunflowerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,9 +43,9 @@ GameObject:
   - 4: {fileID: 400004}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OuterCollider
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,9 +60,9 @@ GameObject:
   - 4: {fileID: 400006}
   - 135: {fileID: 13500002}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InnerCollider
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.46061468, y: -1.42187318e-17, z: -.544935703}
+  m_LocalPosition: {x: 2.15428352, y: -5.11639101e-17, z: -.500095963}
   m_LocalScale: {x: .800000012, y: 1, z: .800000012}
   m_Children:
   - {fileID: 400004}

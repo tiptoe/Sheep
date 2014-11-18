@@ -44,7 +44,7 @@ public class ChangeFenceColor : MonoBehaviour
     void OnTriggerEnter(Collider other) 
     {
         // if it is a ghost fence
-        if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest"))
+        if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest") && !other.CompareTag("Tool"))
         {
             collisions++;
             Debug.Log("collisions: " + collisions);
@@ -55,7 +55,7 @@ public class ChangeFenceColor : MonoBehaviour
     void OnTriggerExit(Collider other) 
     {
         //if (transform.collider.isTrigger)
-        if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest"))
+        if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest") && !other.CompareTag("Tool"))
         {
             collisions--;
             Debug.Log("collisions: " + collisions);

@@ -4492,7 +4492,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3476f1adcf49e454ba3b374032963468, type: 2}
+  - {fileID: 2100000, guid: 78991b833c6a8214d99f3395084d5c67, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8818,6 +8818,7 @@ GameObject:
   - 114: {fileID: 1663018910}
   - 114: {fileID: 1663018909}
   - 82: {fileID: 1663018908}
+  - 114: {fileID: 1663018911}
   m_Layer: 5
   m_Name: Fence
   m_TagString: Untagged
@@ -8982,6 +8983,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &1663018911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1663018906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db834fb370ebda41a5d71b16fe115fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelController: {fileID: 1666069549}
 --- !u!1 &1666069547
 GameObject:
   m_ObjectHideFlags: 0

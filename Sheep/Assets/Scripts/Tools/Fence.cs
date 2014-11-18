@@ -71,7 +71,7 @@ public class Fence : DragTool {
         fence.transform.LookAt(endPosition);
         // TODO: performance optimalization
         fence.transform.GetChild(0).transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, Vector3.Distance(startPosition, endPosition));
-        fence.transform.GetChild(2).transform.position = new Vector3(endPosition.x, 0.9f, endPosition.z);
+        fence.transform.GetChild(2).transform.position = new Vector3(endPosition.x, 1f, endPosition.z);
         //fence.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, Vector3.Distance(startPosition, endPosition));
     }
 

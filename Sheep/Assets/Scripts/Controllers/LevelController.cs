@@ -15,9 +15,13 @@ public class LevelController : MonoBehaviour {
 	public GUIController _GUIController;
 	public GameController _GameController;
 
-	void Start()
+	void Awake()
 	{
 		_GameController = FindGameController();
+	}
+
+	void Start()
+	{
 		aliveSheeps = Sheeps.Length;
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;

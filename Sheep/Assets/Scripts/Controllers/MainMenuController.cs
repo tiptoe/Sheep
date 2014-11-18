@@ -31,7 +31,7 @@ public class MainMenuController : MonoBehaviour {
 
 	public void ChangeToPlay(RectTransform activePage)
 	{
-		_GameController.LoadLevel("VerticalSlice");
+		_GameController.LoadLevel("prototype2");
 		//activePage.gameObject.SetActive(false);
 		//Play.gameObject.SetActive(true);
 	}

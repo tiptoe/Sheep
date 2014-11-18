@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Tools\SingleTouchTool.cs" />
      <Compile Include="Assets\Scripts\Tools\Sunflower.cs" />
      <Compile Include="Assets\Scripts\Tools\Tool.cs" />
+     <Compile Include="Assets\Scripts\Tools\Trap.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />

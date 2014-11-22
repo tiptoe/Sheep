@@ -44,6 +44,13 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public float speed = 2.0f;
 
+    public float interestSpeedChange = 1.1f;
+    public float scaredSpeedChange = 1.5f;
+    /// <summary>
+    /// používá se pokud například chceme zpomali při průchodu vodou, vysokovu trávou ...
+    /// </summary>
+    public float defSpeedChange = 1.0f;
+
     public AIStates State { get { return sheepState; } set { sheepState = value; } }
 
    
@@ -178,13 +185,13 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     
     void ChangeTargetInterested()
     {
-        Debug.Log("curious target");
+       // Debug.Log("curious target");
         Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
         /// zde doplnit nějaký algoritmus na hledání  objektů
         /// tent prozatím ignoruje vzdálenosti
         List<GameObjectInfo> interestingObjects = new List<GameObjectInfo>();
         int count =0;
-        Debug.Log(colliders.Length);
+      
         foreach (Collider col in colliders)
         {
             GameObjectInfo interestedGameObject = col.gameObject.GetComponent<GameObjectInfo>();
@@ -200,7 +207,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             ChangeMood();
             return;
         }
-        Debug.Log(count);
+      
         GameObjectInfo[] arrayShuffle = new GameObjectInfo[count];
         int position = 0;
         foreach (GameObjectInfo InterObject in interestingObjects)
@@ -234,6 +241,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         //ObjectTarget = arrayShuffle[random].gameObject;
         vectorTarget = arrayShuffle[random].transform.position;
         aiAgent.SetDestination(vectorTarget);
+        aiAgent.speed = speed* defSpeedChange* interestSpeedChange;
         NewtargetAquired();
       
     }
@@ -280,7 +288,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     void ChangeTargetScared( Vector3 scaredThing)
     {
-        Debug.Log("scared target");
+       // Debug.Log("scared target");
 		Vector3 dir = this.transform.position - scaredThing;
         dir = (dir.normalized) * 80.0f;
         List<Vector3> possibleRuntargets = new List<Vector3>();
@@ -316,6 +324,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             aiAgent.SetDestination(possibleRuntargets[r]);
         }
         Debug.Log("runn");
+        aiAgent.speed = defSpeedChange * speed * scaredSpeedChange;
        // helpNormalCounter = 1.0f;
        // NewtargetAquired();
     }
@@ -335,28 +344,28 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// </summary>
     public void ChangeMood()
     {
-        // aiAgent.Resume();
+        //aiAgent.Resume();
+        aiAgent.speed = defSpeedChange*speed;
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
         if (sheepState == AIStates.Interested)
         {
-            Debug.Log("normal state");
+            //Debug.Log("normal state");
             sheepState = AIStates.Normal;
         }
         else if (sheepState == AIStates.Normal)
         {
-            Debug.Log("Interest state");
+            //Debug.Log("Interest state");
             sheepState = AIStates.Interested;
             ChangeTargetInterested();
-
         }
         else if (sheepState == AIStates.Scared)
         {
-            Debug.Log("now not scared");
+           // Debug.Log("now not scared");
             sheepState = AIStates.Normal;
         }
         else if (sheepState == AIStates.Eat)
         {
-            Debug.Log("end eating");
+            //Debug.Log("end eating");
             sheepState = AIStates.Normal;
         }
         //   aiAgent.Resume();
@@ -369,6 +378,10 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// <param name="newState"></param>
     public void ChangeMood(AIStates newState, float moodTime=0)
     {
+        if (newState == AIStates.Eat)
+        {
+           // aiAgent.Stop();
+        }
         if (moodTime == 0)
         {
             lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
@@ -392,7 +405,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void FenceBuild()
     {
-        Debug.Log("curious target");
+        //Debug.Log("curious target");
         Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
         // pokud najdu plot
         //vezmu si jeho pozici a zavolám

@@ -48,7 +48,14 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     /// </summary>
     private float remainingDistance;
 
-    public float speed = 2.7f;
+    public float speed = 2.0f;
+
+    public float interestSpeedChange = 1.1f;
+    public float scaredSpeedChange = 1.5f;
+    /// <summary>
+    /// používá se pokud například chceme zpomali při průchodu vodou, vysokovu trávou ...
+    /// </summary>
+    public float defSpeedChange = 1.0f;
 
     public AIStates State { get { return wolfState; } set { wolfState = value; } }
 
@@ -94,7 +101,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
         if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
         {
-            Debug.Log("star moving - rotating complete");
+           // Debug.Log("star moving - rotating complete");
             aiAgent.updatePosition = true;
         }
         else
@@ -140,7 +147,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
         if (!aiAgent.updatePosition && Vector3.Angle(new Vector3(aiAgent.nextPosition.x, 0, aiAgent.nextPosition.z) - new Vector3(transform.position.x, 0, transform.position.z), transform.forward) < 0.5f)
         {
-            Debug.Log("star moving - rotating complete 2");
+            //Debug.Log("star moving - rotating complete 2");
             aiAgent.updatePosition = true;
         }
         else
@@ -159,14 +166,13 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     void ChangeTargetTracking()
     {
-        Debug.Log("curious target");
+        //Debug.Log("curious target");
         Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
         /// zde doplnit nějaký algoritmus na hledání  objektů
         /// tent prozatím ignoruje vzdálenosti
         List<GameObjectInfo> interestingObjects = new List<GameObjectInfo>();
         int count = 0;
-        Debug.Log(colliders.Length);
-        foreach (Collider col in colliders)
+         foreach (Collider col in colliders)
         {
             GameObjectInfo interestedGameObject = col.gameObject.GetComponent<GameObjectInfo>();
             if (interestedGameObject != null && interestedGameObject.gameObject != this.gameObject)
@@ -181,7 +187,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             ChangeMood();
             return;
         }
-        Debug.Log(count);
+        
         GameObjectInfo[] arrayShuffle = new GameObjectInfo[count];
         int position = 0;
         foreach (GameObjectInfo InterObject in interestingObjects)
@@ -212,7 +218,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             }
         }
 
-        aiAgent.speed = speed * 0.75f;
+        aiAgent.speed = defSpeedChange*speed * 0.75f;
         //ObjectTarget = arrayShuffle[random].gameObject;
         vectorTarget = arrayShuffle[random].transform.position;
         aiAgent.SetDestination(vectorTarget);
@@ -226,7 +232,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         if (gameObjectTarget == null)
         {
             ChangeMood();
-            Debug.Log("hunting lost");
+           // Debug.Log("hunting lost");
         }
         else
         {
@@ -240,7 +246,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     {
        
         Debug.Log("finded ovečka" + target.transform.position);
-        aiAgent.speed = speed * 1.5f;
+        aiAgent.speed = defSpeedChange * speed * 1.5f;
         vectorTarget = target.transform.position;
         gameObjectTarget = target;
         aiAgent.SetDestination(gameObjectTarget.transform.position);
@@ -270,7 +276,10 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void ChangeMood()
     {
-        Debug.Log("change mood??");
+
+       // aiAgent.Resume();
+        aiAgent.speed = defSpeedChange * speed;
+       // Debug.Log("change mood??");
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
         if (wolfState != AIStates.Eat || wolfState != AIStates.Hunting)
         {
@@ -285,27 +294,27 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             
         }
 
-        Debug.Log("change mood");
+       // Debug.Log("change mood");
         if (wolfState == AIStates.Tracking)
         {
-            Debug.Log("normal state");
+          //  Debug.Log("normal state");
             wolfState = AIStates.Normal;
         }
         else if (wolfState == AIStates.Normal)
         {
-            Debug.Log("tracking state");
+          //  Debug.Log("tracking state");
             wolfState = AIStates.Tracking;
             ChangeTargetTracking();
 
         }
         else if (wolfState == AIStates.Hunting)
         {
-            Debug.Log("now not hunt");
+           // Debug.Log("now not hunt");
             wolfState = AIStates.Normal;
         }
         else if (wolfState == AIStates.Eat)
         {
-            Debug.Log("again hungry");
+            //Debug.Log("again hungry");
             wolfState = AIStates.Normal;
 
         }
@@ -313,6 +322,11 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void ChangeMood(AIStates newState, float moodTime = 0)
     {
+        if (newState == AIStates.Eat)
+        {
+          //  aiAgent.Stop();
+        }
+        
         wolfState = newState;
     }
 
@@ -342,7 +356,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
                 }
             }
         }
-        Debug.Log("curious target");
+       
         Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
         // pokud najdu plot
         //vezmu si jeho pozici a zavolám
@@ -375,7 +389,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     public GameObject FindFood()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 7.0f);
-        Debug.Log(colliders.Length + "finded maybe food");
+        //Debug.Log(colliders.Length + "finded maybe food");
         foreach (Collider col in colliders)
         {
             SheepAI sheep = col.GetComponent<SheepAI>();

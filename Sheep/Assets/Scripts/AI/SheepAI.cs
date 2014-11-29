@@ -84,7 +84,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             ChangeMood();
         }
         //tohle pro učely testování
-        if (Input.GetMouseButtonDown(0))
+    /*    if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -94,7 +94,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
                 ChangeTargetScared(hit.point);
             }
 
-        }
+        }*/
 
         
         switch (sheepState)
@@ -429,7 +429,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void DeadOccurs(Vector3 position)
     {
-        throw new System.NotImplementedException();
+        if (Vector3.Distance(this.transform.position, position) > observableArea)
+        {
+            ChangeMood(AIStates.Scared);
+            ChangeTargetScared(position);
+        }
         //volám levem manager že je mrtvo
     }
 

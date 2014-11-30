@@ -1624,7 +1624,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   moodChange: 7
   moodChangeRange: 1
   gameObjectTarget: {fileID: 0}
-  speed: 1.65999997
+  speed: 2
   interestSpeedChange: 1.10000002
   scaredSpeedChange: 1.5
   defSpeedChange: 1
@@ -4860,7 +4860,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4893,7 +4893,7 @@ MonoBehaviour:
   observableArea: 8
   moodChange: 6
   moodChangeRange: 1
-  speed: 1.62
+  speed: 1.88999999
   interestSpeedChange: 1.10000002
   scaredSpeedChange: 1.5
   defSpeedChange: 1
@@ -4908,7 +4908,7 @@ NavMeshAgent:
   m_Speed: 1.29999995
   m_Acceleration: 2
   avoidancePriority: 50
-  m_AngularSpeed: 250
+  m_AngularSpeed: 280
   m_StoppingDistance: .25
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
@@ -7783,7 +7783,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -7816,7 +7816,7 @@ MonoBehaviour:
   observableArea: 8
   moodChange: 6
   moodChangeRange: 1
-  speed: 1.62
+  speed: 1.88999999
   interestSpeedChange: 1.10000002
   scaredSpeedChange: 1.5
   defSpeedChange: 1
@@ -7831,7 +7831,7 @@ NavMeshAgent:
   m_Speed: 1.29999995
   m_Acceleration: 2
   avoidancePriority: 50
-  m_AngularSpeed: 250
+  m_AngularSpeed: 280
   m_StoppingDistance: .25
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
@@ -8209,7 +8209,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -8242,7 +8242,7 @@ MonoBehaviour:
   observableArea: 8
   moodChange: 6
   moodChangeRange: 1
-  speed: 1.62
+  speed: 1.88999999
   interestSpeedChange: 1.10000002
   scaredSpeedChange: 1.5
   defSpeedChange: 1
@@ -8257,7 +8257,7 @@ NavMeshAgent:
   m_Speed: 1.29999995
   m_Acceleration: 2
   avoidancePriority: 50
-  m_AngularSpeed: 250
+  m_AngularSpeed: 280
   m_StoppingDistance: .25
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1

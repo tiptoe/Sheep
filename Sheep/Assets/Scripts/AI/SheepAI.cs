@@ -175,9 +175,10 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
         }
 
-        if (aiAgent.remainingDistance <1.0f ||(aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpMoodChangeCounter <= 0))
+        if (aiAgent.remainingDistance <0.5f||(aiAgent.updatePosition && aiAgent.remainingDistance > remainingDistance && helpMoodChangeCounter <= 0))
         {
-           
+            //dosáhl cíle tak se zastaví
+            aiAgent.Stop();
            // ChangeTargetInterested();
         }
         remainingDistance = aiAgent.remainingDistance;
@@ -250,27 +251,12 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     void UpdateScared()
     {
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-
-                ChangeTargetScared(hit.point);
-            }
-            
-        }
-        lastMoodChange = lastMoodChange - Time.deltaTime*1.5f;
-       // helpNormalCounter = helpNormalCounter - Time.deltaTime * 0.9f;
-
-      
-
-      /*  if ( aiAgent.remainingDistance >= remainingDistance && helpNormalCounter <= 0)
-        {
-            ChangeMood();
-        }*/
      
+        lastMoodChange = lastMoodChange - Time.deltaTime*1.5f;
+        if (aiAgent.remainingDistance < 0.1f)
+        {
+            aiAgent.Stop();
+        }
     }
 
     void UpdateEat()
@@ -324,6 +310,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             aiAgent.SetDestination(possibleRuntargets[r]);
         }
         Debug.Log("runn");
+        aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed * scaredSpeedChange;
        // helpNormalCounter = 1.0f;
        // NewtargetAquired();
@@ -333,6 +320,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     
     private void NewtargetAquired()
     {
+        aiAgent.Resume();
         aiAgent.updatePosition = false;
       //  rotationHelp = transform.rotation.eulerAngles;
         remainingDistance = aiAgent.remainingDistance;
@@ -414,8 +402,16 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void SetTarget(Vector3 position, float priority)
     {
+        
         if (priority >= 1.0f)
         {
+            vectorTarget = position;
+            aiAgent.SetDestination(position);
+            NewtargetAquired();
+        }
+        else if (Random.value >= priority)
+        {
+            
             vectorTarget = position;
             aiAgent.SetDestination(position);
             NewtargetAquired();

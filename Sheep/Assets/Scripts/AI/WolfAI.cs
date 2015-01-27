@@ -142,6 +142,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     void UpdateTracking()
     {
 
+
         lastMoodChange = lastMoodChange - Time.deltaTime;
         helpMoodChangeCounter = helpMoodChangeCounter - Time.deltaTime;
 
@@ -158,8 +159,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
         if (aiAgent.remainingDistance < 1.0f || (aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpMoodChangeCounter <= 0))
         {
-
-            // ChangeTargetInterested();
+            Debug.Log("target is lost");
+            ChangeTargetTracking();
         }
         remainingDistance = aiAgent.remainingDistance;
     }
@@ -168,7 +169,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     {
         //Debug.Log("curious target");
         Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
-        /// zde doplnit nějaký algoritmus na hledání  objektů
+        /// zde kdžtak vylepšit nějaký algoritmus na hledání  objektů
         /// tent prozatím ignoruje vzdálenosti
         List<GameObjectInfo> interestingObjects = new List<GameObjectInfo>();
         int count = 0;
@@ -271,9 +272,6 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     }
 
 
-
-
-
     public void ChangeMood()
     {
 
@@ -341,7 +339,6 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         throw new System.NotImplementedException();
     }
 
-
     public void FenceBuild()
     {
         if (wolfState == AIStates.Hunting || wolfState == AIStates.Tracking)
@@ -389,16 +386,38 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     public GameObject FindFood()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 7.0f);
+        float distanceFood = float.MaxValue;
+        SheepAI returnSheepAI =null;
+      
         //Debug.Log(colliders.Length + "finded maybe food");
         foreach (Collider col in colliders)
         {
-            SheepAI sheep = col.GetComponent<SheepAI>();
+             SheepAI sheep = col.GetComponent<SheepAI>();
             if (sheep != null)
             {
-                Debug.Log("nalezena ovečka");
-                
-                return sheep.gameObject;
+                float distance = Vector3.Distance(sheep.transform.position, this.transform.position);
+                NavMeshPath path = new NavMeshPath();
+                float pathDistance = 0;
+                aiAgent.CalculatePath(sheep.transform.position,path);
+                for (int i = 0; i < path.corners.Length - 1; i++)
+                {
+                    pathDistance = Vector3.Distance(path.corners[i], path.corners[i + 1]);
+                }
+                if ((distance + pathDistance) / 2.0f < distanceFood)
+                {
+                    distanceFood = (distance + pathDistance) / 2.0f;
+                    returnSheepAI = sheep;
+                }
+                else
+                {
+                    Debug.Log("too farr food");
+                }
+                   
             }
+        }
+        if (returnSheepAI != null)
+        {
+            return returnSheepAI.gameObject;
         }
         return null;
     }
@@ -417,7 +436,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         }
         else
         {
-            Debug.Log("kolize ne ovečka");
+            //Debug.Log("kolize ne ovečka");
         }
     }
 

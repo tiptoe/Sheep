@@ -279,7 +279,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         aiAgent.speed = defSpeedChange * speed;
        // Debug.Log("change mood??");
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
-        if (wolfState != AIStates.Eat || wolfState != AIStates.Hunting)
+        if (wolfState != AIStates.Eat && wolfState != AIStates.Hunting)
         {
             GameObject target = FindFood();
             if (target != null)
@@ -334,6 +334,11 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         throw new System.NotImplementedException();
     }
 
+    /// <summary>
+    /// nepoužívá se vubec
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="priority"></param>
     public void SetTarget(Transform target, int priority)
     {
         throw new System.NotImplementedException();
@@ -349,6 +354,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
                 RaycastHit[] obstacles = Physics.RaycastAll(aiAgent.path.corners[i], aiAgent.path.corners[i + 1]);
                 foreach (RaycastHit hit in obstacles)
                 {
+                   // Debug.Log("plot postaven do cesty");
                     // if hit plot tak změna stavu hunting -tracking, tracking -> hledání nových cílů
                 }
             }
@@ -362,12 +368,24 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void SetTarget(Vector3 position, float priority)
     {
-        throw new System.NotImplementedException();
+        if (priority >= 1.0f)
+        {
+            vectorTarget = position;
+            aiAgent.SetDestination(position);
+            NewtargetAquired();
+        }
+        else if (Random.value >= priority)
+        {
+
+            vectorTarget = position;
+            aiAgent.SetDestination(position);
+            NewtargetAquired();
+        }
     }
 
     public void SetTarget(GameObject goal, float priority)
     {
-        throw new System.NotImplementedException();
+        SetTarget(goal.transform.position, priority);
     }
 
     public void DeadOccurs(Vector3 position)

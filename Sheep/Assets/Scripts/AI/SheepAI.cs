@@ -384,7 +384,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     //zatin nedokončené
 
-    //nepoužívá se vubec
+    /// <summary>
+    /// nepoužívá se vubec
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="priority"></param>
     public void SetTarget(Transform target, int priority)
     {
         throw new System.NotImplementedException();

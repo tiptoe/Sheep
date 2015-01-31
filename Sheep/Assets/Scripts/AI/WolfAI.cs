@@ -247,6 +247,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     {
        
         Debug.Log("finded ovečka" + target.transform.position);
+        aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed * 1.5f;
         vectorTarget = target.transform.position;
         gameObjectTarget = target;

@@ -28,7 +28,7 @@ public class CarAI : MonoBehaviour {
 			vect = Vector3.left;
 				break;
 				}
-		InvokeRepeating ("CreatePorsche", 1, timeDelay);
+		InvokeRepeating ("CreatePorsche", timeDelay, timeDelay);
 
 	}
 	
@@ -45,6 +45,6 @@ public class CarAI : MonoBehaviour {
 
 	void CreatePorsche(){
 		porsche = (GameObject)Instantiate (carPrefab, this.transform.position, Quaternion.identity);
-		porsche.transform.Rotate (Vector3.right, 90, Space.World); 
+		porsche.transform.Rotate (Vector3.right, 0, Space.World); 
 	}
 }

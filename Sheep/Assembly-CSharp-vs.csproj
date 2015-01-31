@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AI\CarAI.cs" />
+     <Compile Include="Assets\Scripts\AI\CarKillingAI.cs" />
      <Compile Include="Assets\Scripts\AI\GameObjectInfo.cs" />
      <Compile Include="Assets\Scripts\AI\IAnimalAI.cs" />
      <Compile Include="Assets\Scripts\AI\SheepAI.cs" />

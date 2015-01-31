@@ -433,7 +433,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             }
         }
         //Debug.Log("curious target");
-        Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
+        //Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
         // pokud najdu plot
         //vezmu si jeho pozici a zavolám
         //ChangeTargetScared(pozice)

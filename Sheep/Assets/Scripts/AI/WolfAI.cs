@@ -76,6 +76,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     void Update()
     {
+       
         if (lastMoodChange <= 0)
         {
             //  ChangeTargetNormal();
@@ -275,8 +276,9 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void ChangeMood()
     {
+        gameObjectTarget = null;
 
-       // aiAgent.Resume();
+        aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed;
        // Debug.Log("change mood??");
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
@@ -347,24 +349,27 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void FenceBuild()
     {
-        if (wolfState == AIStates.Hunting || wolfState == AIStates.Tracking)
+        float distance = 0.0f;
+        Vector3 targetToCalc = aiAgent.pathEndPosition;
+       
+       
+       
+        NavMeshPath newPath = new NavMeshPath();
+        if (aiAgent.CalculatePath(targetToCalc, newPath))
         {
-            for (int i = 0; i < aiAgent.path.corners.Length - 1; i++)
+            for (int i = 0; i < newPath.corners.Length - 1; i++)
             {
-
-                RaycastHit[] obstacles = Physics.RaycastAll(aiAgent.path.corners[i], aiAgent.path.corners[i + 1]);
-                foreach (RaycastHit hit in obstacles)
-                {
-                   // Debug.Log("plot postaven do cesty");
-                    // if hit plot tak změna stavu hunting -tracking, tracking -> hledání nových cílů
-                }
+                distance += Vector3.Distance(newPath.corners[i], newPath.corners[i + 1]);
+            }
+            distance += Vector3.Distance(newPath.corners[0], this.transform.position);
+            if (distance >= aiAgent.remainingDistance * 2.0f && distance>5.0f)
+            {
+                ChangeMood();
+                //Debug.Log("překážka změna cíle");
             }
         }
-       
-        Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);
-        // pokud najdu plot
-        //vezmu si jeho pozici a zavolám
-        //ChangeTargetScared(pozice)
+        
+      
     }
 
     public void SetTarget(Vector3 position, float priority)
@@ -452,6 +457,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             sheep.SetDead();
 			controler.AnimalDied(Animals.Sheep);
             Destroy(sheep.gameObject);
+            gameObjectTarget = null;
         }
         else
         {

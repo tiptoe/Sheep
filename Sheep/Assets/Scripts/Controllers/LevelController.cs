@@ -5,7 +5,9 @@ public class LevelController : MonoBehaviour {
 	public int Id = 0;
 	public float Length = 60;
 	public float SpawnWolvesAt = 30;
-
+    public int intervalPoints = 10;
+    public float intervalLength = 5f;
+    
 	public GameObject[] Sheeps;
 	public GameObject[] Wolves;
 	private int aliveSheeps = 0;
@@ -14,6 +16,8 @@ public class LevelController : MonoBehaviour {
 
 	public GUIController _GUIController;
 	public GameController _GameController;
+
+    private float lastIntervalTime;
 
 	void Awake()
 	{
@@ -25,6 +29,7 @@ public class LevelController : MonoBehaviour {
 		aliveSheeps = Sheeps.Length;
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
+        lastIntervalTime = Length;
 	}
 
 	void Update()
@@ -43,11 +48,19 @@ public class LevelController : MonoBehaviour {
 
 		Length -= Time.deltaTime;
 		//Debug.Log((int)Length);
+
+        // add interval points
+        if (lastIntervalTime - Length > intervalLength)
+        {
+            AddScore(intervalPoints);
+            lastIntervalTime = Length;
+        }
 	}
 
     public void AddScore(int value)
     {
 		Score += value;
+        _GUIController.SetScore(Score);
     }
 
     public void AnimalDied(Animals animal)

@@ -7,7 +7,8 @@ public class GUIController : MonoBehaviour {
 	public LevelController _LevelController;
 
 	public GameObject TimeLeft;
-	public GameObject Score;
+	public Text score;
+    public ScoreChange scoreChangePrefab;
 	public GameObject PauseMenu;
 	public GameObject EndRoundMenu;	
 
@@ -21,18 +22,21 @@ public class GUIController : MonoBehaviour {
 	public Slider AudioBackgroundSlider;
 	public Slider AudioSoundsSlider;
 
+    private int scoreValue;
+
 	// Use this for initialization
 	void Start ()
 	{
+        scoreValue = 0;
+
 		AddAudioButtonsListeners();
-		TimeLeft.GetComponent<Text>().text = "TIME LEFT: " + (int)_LevelController.Length;
-		//Score.GetComponent<Text>().text = "SCORE: " + _LevelController.Score;
+		//TimeLeft.GetComponent<Text>().text = "TIME LEFT: " + (int)_LevelController.Length;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		TimeLeft.GetComponent<Text>().text = "TIME LEFT: " + (int)_LevelController.Length;
+		//TimeLeft.GetComponent<Text>().text = "TIME LEFT: " + (int)_LevelController.Length;
 		//Score.GetComponent<Text>().text = "SCORE: " + _LevelController.Score;
 	}
 
@@ -75,6 +79,18 @@ public class GUIController : MonoBehaviour {
 	{
 		Application.LoadLevel(Application.loadedLevelName);
 	}
+
+    public void SetScore(int newScoreValue)
+    {
+        int change = newScoreValue - scoreValue;
+        scoreValue = newScoreValue;
+
+        score.text = "" + scoreValue;
+
+        ScoreChange scoreChange = Instantiate(scoreChangePrefab) as ScoreChange;
+        scoreChange.transform.SetParent(score.transform);
+        scoreChange.value = change;
+    }
 
 	private void AddAudioButtonsListeners()
 	{

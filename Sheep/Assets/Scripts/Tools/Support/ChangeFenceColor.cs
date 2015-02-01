@@ -47,7 +47,6 @@ public class ChangeFenceColor : MonoBehaviour
         if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest") && !other.CompareTag("Tool"))
         {
             collisions++;
-            Debug.Log("collisions: " + collisions);
             SetRed();
         }      
     }
@@ -58,7 +57,6 @@ public class ChangeFenceColor : MonoBehaviour
         if (isGhostFence && !other.CompareTag("Background") && !other.CompareTag("Interest") && !other.CompareTag("Tool"))
         {
             collisions--;
-            Debug.Log("collisions: " + collisions);
             SetGreen();
         }       
     }

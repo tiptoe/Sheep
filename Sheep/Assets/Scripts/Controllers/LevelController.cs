@@ -12,7 +12,11 @@ public class LevelController : MonoBehaviour {
 	public GameObject[] Wolves;
 	private int aliveSheeps = 0;
 	private int aliveWolves = 0;
+
 	public int Score = 0;
+	public int BronzeThreshold = 100;
+	public int SilverThreshold = 500;
+	public int GoldThreshold = 1000;
 
 	public GUIController _GUIController;
 	public GameController _GameController;
@@ -111,7 +115,21 @@ public class LevelController : MonoBehaviour {
 
 	private void EndRound()
 	{
-		_GUIController.EndRound(aliveSheeps);
+		int stars = 0;
+
+		if(Score >= BronzeThreshold)
+			stars++;
+
+		if(Score >= SilverThreshold)
+			stars++;
+
+		if(Score >= GoldThreshold)
+			stars++;
+
+
+
+		_GameController.SaveProgress(Id,Score,stars);
+		_GUIController.EndRound(stars);
 	}
 
 	private void SpawnWolves()

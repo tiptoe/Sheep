@@ -65,14 +65,9 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     void Start()
     {
         aiAgent = GetComponent<NavMeshAgent>();
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2 +0.05f) - moodChangeRange;
         ChangeTargetNormal();
-        // ChangeMood();
-      //  aiAgent.SetDestination(new Vector3(-8.0f, 0, -5.0f));
-      //  remainingDistance = aiAgent.remainingDistance;
-
-      //  aiAgent.updatePosition = false;
-       // rotationHelp = transform.rotation.eulerAngles;
+    
     }
 
 
@@ -333,9 +328,9 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// </summary>
     public void ChangeMood()
     {
-        //aiAgent.Resume();
+        aiAgent.Resume();
         aiAgent.speed = defSpeedChange*speed;
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        lastMoodChange = moodChange + Random.Range(0.1f, moodChangeRange * 2+0.05f) - moodChangeRange;
         if (sheepState == AIStates.Interested)
         {
             //Debug.Log("normal state");

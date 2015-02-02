@@ -281,7 +281,18 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed;
        // Debug.Log("change mood??");
-        lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
+        lastMoodChange = moodChange + Random.Range(0.0f, moodChangeRange * 2+0.05f) - moodChangeRange;
+        
+        //tohle kontroluje zda je nějaké jídlo extrémněnlízko
+        GameObject nearFood = FindFood(true);
+        if (nearFood != null)
+        {
+            Debug.Log("prioritní jidlo");
+            wolfState = AIStates.Hunting;
+
+            SetHuntingTarget(nearFood);
+            return;
+        }
         if (wolfState != AIStates.Eat && wolfState != AIStates.Hunting)
         {
             GameObject target = FindFood();
@@ -407,22 +418,47 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         throw new System.NotImplementedException();
     }
 
-    public GameObject FindFood()
+    public GameObject FindFood(bool near= false)
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 7.0f);
+        Collider[] colliders;
+        if (near)
+        {
+           colliders = Physics.OverlapSphere(transform.position, observableArea / 4.0f);
+        }
+        else
+        {
+            colliders = Physics.OverlapSphere(transform.position, observableArea / 2.0f);
+        }
         float distanceFood = float.MaxValue;
-        SheepAI returnSheepAI =null;
-      
+        //SheepAI returnSheepAI =null;
+        GameObject food = null;
+        GameObject returnFood = null;
         //Debug.Log(colliders.Length + "finded maybe food");
         foreach (Collider col in colliders)
         {
              SheepAI sheep = col.GetComponent<SheepAI>();
-            if (sheep != null)
+             Meat meat = col.GetComponent<Meat>();
+             if (sheep != null)
+             {
+                 food = sheep.gameObject;
+             }
+             else if (meat != null)
+             {
+                 food = meat.gameObject;
+             }
+             if (food != null)
             {
-                float distance = Vector3.Distance(sheep.transform.position, this.transform.position);
+                if (near)
+                {
+                    if (Physics.Raycast(this.transform.position, this.transform.position - food.transform.position))
+                    {
+                        continue;
+                    }
+                }
+                float distance = Vector3.Distance(food.transform.position, this.transform.position);
                 NavMeshPath path = new NavMeshPath();
                 float pathDistance = 0;
-                aiAgent.CalculatePath(sheep.transform.position,path);
+                aiAgent.CalculatePath(food.transform.position, path);
                 for (int i = 0; i < path.corners.Length - 1; i++)
                 {
                     pathDistance = Vector3.Distance(path.corners[i], path.corners[i + 1]);
@@ -430,7 +466,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
                 if ((distance + pathDistance) / 2.0f < distanceFood)
                 {
                     distanceFood = (distance + pathDistance) / 2.0f;
-                    returnSheepAI = sheep;
+                    //returnSheepAI = sheep;
+                    returnFood = food;
                 }
                 else
                 {
@@ -439,9 +476,9 @@ public class WolfAI : MonoBehaviour, IAnimalAI
                    
             }
         }
-        if (returnSheepAI != null)
+        if (returnFood != null)
         {
-            return returnSheepAI.gameObject;
+            return returnFood.gameObject;
         }
         return null;
     }
@@ -465,5 +502,6 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         }
     }
 
+   
     //pak sem ještě patří když v okolí bude ovečka/maso? tak jít do hunting
 }

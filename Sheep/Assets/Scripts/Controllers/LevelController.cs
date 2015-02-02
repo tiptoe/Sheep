@@ -18,10 +18,13 @@ public class LevelController : MonoBehaviour {
 	public GameController _GameController;
 
     private float lastIntervalTime;
+    private float lengthMax;
+    private int timePercentage;
 
 	void Awake()
 	{
 		_GameController = FindGameController();
+        lengthMax = Length;
 	}
 
 	void Start()
@@ -30,6 +33,7 @@ public class LevelController : MonoBehaviour {
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
         lastIntervalTime = Length;
+        timePercentage = 0;
 	}
 
 	void Update()
@@ -47,7 +51,15 @@ public class LevelController : MonoBehaviour {
 		}
 
 		Length -= Time.deltaTime;
-		//Debug.Log((int)Length);
+
+        // calculate percantage of elapsed time and send it to gui
+        int tempPercentage = 100 - (int) ((Length / lengthMax) * 100);
+        if (timePercentage != tempPercentage)
+        {
+            timePercentage = tempPercentage;
+            _GUIController.timeHorizon.ChangeState(timePercentage);
+        }
+        
 
         // add interval points
         if (lastIntervalTime - Length > intervalLength)

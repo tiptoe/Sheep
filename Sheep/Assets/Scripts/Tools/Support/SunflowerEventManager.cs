@@ -18,7 +18,7 @@ public class SunflowerEventManager : MonoBehaviour {
         if (OuterTrigger != null)
             OuterTrigger(other.gameObject);*/
 
-        if (!other.transform.parent.CompareTag("Sheep"))
+        if (!other.transform.parent || !other.transform.parent.CompareTag("Sheep"))
             return;
         SheepAI sheep = other.gameObject.GetComponentInParent<SheepAI>();
         sheep.SetTarget(transform.position, 1);

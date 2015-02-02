@@ -9,6 +9,7 @@ public class GUIController : MonoBehaviour {
 	public GameObject TimeLeft;
 	public Text score;
     public ScoreChange scoreChangePrefab;
+    public TimeHorizon timeHorizon;
 	public GameObject PauseMenu;
 	public GameObject EndRoundMenu;	
 

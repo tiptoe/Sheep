@@ -47,6 +47,29 @@ public class FenceDraw : MonoBehaviour
             {
                 UpdatePosition(fenceSolid, startPosition, endPosition);
                 CreatePrecisionObstacle();
+                LevelController controller = FindObjectOfType<LevelController>();
+                if (controller != null)
+                {
+                   
+                    foreach (GameObject sheep in controller.Sheeps)
+                    {
+                        SheepAI sheepAI = sheep.GetComponent<SheepAI>();
+                        if (sheepAI != null)
+                        {
+                            sheepAI.FenceBuild();
+                        }
+                    }
+
+                    foreach (GameObject wolf in controller.Wolves)
+                    {
+                        WolfAI wolfAI = wolf.GetComponent<WolfAI>();
+                        if (wolfAI != null)
+                        {
+                            wolfAI.FenceBuild();
+                        }
+                    }
+                }
+
             }
  
         }

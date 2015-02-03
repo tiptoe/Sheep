@@ -393,35 +393,39 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     public void FenceBuild()
     {
+        if (aiAgent == null || aiAgent.pathEndPosition == null)
+        {
+            return;
+        }
         NavMeshPath path = aiAgent.path;
         if (path.corners.Length > 1)
         {
-            Vector3 start, end;
+           Vector3 start, end;
             RaycastHit[] hits;
 
             start = new Vector3(this.transform.position.x, 0.5f, this.transform.position.y);
             end = new Vector3(path.corners[0].x, 0.5f, path.corners[0].z);
-            hits = Physics.RaycastAll(start, start - end);
+            hits = Physics.RaycastAll(start, start - end, Vector3.Distance(start, end));
             foreach (RaycastHit hittedObj in hits)
             {
                 if (hittedObj.collider.gameObject.tag.Equals("Tool"))
                 {
                     ChangeTargetScared(hittedObj.point);
-                    //Debug.Log("kolize na první pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
+                   Debug.Log("kolize na první pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
                 }
             }
             // jak moc dopředu kontrolovat cestu čim víc dopředu tím víc vyděšených ovcí i zbytečně, 
-            for (int i = 0; i < Mathf.Min(path.corners.Length-1,3); i++)
+            for (int i = 0; i < Mathf.Min(path.corners.Length-1,5); i++)
             {
                 start=new Vector3( path.corners[i].x, 0.5f, path.corners[i].z);
                 end = new Vector3(path.corners[i+1].x, 0.5f, path.corners[i+1].z);
-                hits = Physics.RaycastAll(start, start - end);
+                hits = Physics.RaycastAll(start, start - end,Vector3.Distance(start,end));
                 foreach (RaycastHit hittedObj in hits)
                 {
                     if (hittedObj.collider.gameObject.tag.Equals("Tool"))
                     {
                         ChangeTargetScared(hittedObj.point);
-                      //  Debug.Log("kolize na pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
+                       Debug.Log("kolize na pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
                     }
                 }
 

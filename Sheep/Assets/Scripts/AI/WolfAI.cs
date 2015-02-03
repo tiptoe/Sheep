@@ -360,10 +360,16 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void FenceBuild()
     {
+        if (aiAgent == null || aiAgent.pathEndPosition == null)
+        {
+            return;
+        }
+        if (wolfState != AIStates.Hunting)
+        {
+            return;
+        }
         float distance = 0.0f;
         Vector3 targetToCalc = aiAgent.pathEndPosition;
-       
-       
        
         NavMeshPath newPath = new NavMeshPath();
         if (aiAgent.CalculatePath(targetToCalc, newPath))
@@ -376,7 +382,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             if (distance >= aiAgent.remainingDistance * 2.0f && distance>5.0f)
             {
                 ChangeMood();
-                //Debug.Log("překážka změna cíle");
+               // Debug.Log("překážka změna cíle");
             }
         }
         
@@ -489,12 +495,37 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         SheepAI sheep = other.gameObject.GetComponent<SheepAI>();
         if (sheep != null)
         {
-            Debug.Log("snězena ovečka");
-            ChangeMood(AIStates.Eat);
-            sheep.SetDead();
-			controler.AnimalDied(Animals.Sheep);
-            Destroy(sheep.gameObject);
-            gameObjectTarget = null;
+            LevelController controller = FindObjectOfType<LevelController>();
+            if (controller != null)
+            {
+                controller.AnimalDied(Animals.Sheep);
+                foreach (GameObject sheepGO in controller.Sheeps)
+                {
+                    if (sheepGO == null) { continue; }
+                    SheepAI sheepAI = sheepGO.GetComponent<SheepAI>();
+                    if (sheepAI != null)
+                    {
+                        sheepAI.DeadOccurs(other.gameObject.transform.position);
+                    }
+                }
+
+                foreach (GameObject wolfGO in controller.Wolves)
+                {
+                    if (wolfGO == null) { continue; }
+                    WolfAI wolfAI = wolfGO.GetComponent<WolfAI>();
+                    if (wolfAI != null)
+                    {
+                        wolfAI.DeadOccurs(other.gameObject.transform.position);
+                    }
+                }
+
+                Debug.Log("snězena ovečka");
+                ChangeMood(AIStates.Eat);
+                sheep.SetDead();
+                controler.AnimalDied(Animals.Sheep);
+                Destroy(sheep.gameObject);
+                gameObjectTarget = null;
+            }
         }
         else
         {

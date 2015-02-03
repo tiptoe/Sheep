@@ -60,6 +60,30 @@ public class Fence : DragTool {
             CreatePrecisionObstacle();
             levelController.AddScore(score);
             audio.Play();
+            LevelController controller = FindObjectOfType<LevelController>();
+            if (controller != null)
+            {
+             
+                foreach (GameObject sheep in controller.Sheeps)
+                {
+                    if (sheep == null) { continue; }
+                    SheepAI sheepAI = sheep.GetComponent<SheepAI>();
+                    if (sheepAI != null)
+                    {
+                        sheepAI.FenceBuild();
+                    }
+                }
+
+                foreach (GameObject wolf in controller.Wolves)
+                {
+                    if (wolf == null) { continue; }
+                    WolfAI wolfAI = wolf.GetComponent<WolfAI>();
+                    if (wolfAI != null)
+                    {
+                        wolfAI.FenceBuild();
+                    }
+                }
+            }
         }
     }
 

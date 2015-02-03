@@ -9,7 +9,7 @@ public class CarKillingAI : MonoBehaviour {
 		_LevelController = FindLevelController();
 	}
 
-	void OnCollisionEnter(Collision collision){
+	void OnTriggerEnter(Collider collision){
 		if(collision.gameObject.tag == "Sheep")
 		{
 			collision.gameObject.GetComponent<SheepAI>().SetDead();

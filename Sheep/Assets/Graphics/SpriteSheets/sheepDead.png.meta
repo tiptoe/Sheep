@@ -106,8 +106,8 @@ TextureImporter:
     - name: sheepDead_00001
       rect:
         serializedVersion: 2
-        x: 1931
-        y: 3415
+        x: 483
+        y: 3
         width: 407
         height: 291
       alignment: 0
@@ -116,588 +116,588 @@ TextureImporter:
     - name: sheepDead_00002
       rect:
         serializedVersion: 2
-        x: 2
-        y: 302
+        x: 1907
+        y: 3195
         width: 407
-        height: 291
+        height: 293
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00003
       rect:
         serializedVersion: 2
-        x: 411
-        y: 302
-        width: 407
-        height: 291
+        x: 1905
+        y: 2895
+        width: 409
+        height: 293
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00004
       rect:
         serializedVersion: 2
-        x: 414
-        y: 9
-        width: 407
-        height: 291
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 1853
+        y: 159
+        width: 412
+        height: 295
+      alignment: 9
+      pivot: {x: .50121361, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00005
       rect:
         serializedVersion: 2
-        x: 1930
-        y: 3121
-        width: 408
-        height: 292
+        x: 1857
+        y: 456
+        width: 414
+        height: 295
       alignment: 9
-      pivot: {x: .501225471, y: .501712322}
+      pivot: {x: .501207709, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00006
       rect:
         serializedVersion: 2
-        x: 2
-        y: 7
-        width: 410
-        height: 292
+        x: 1863
+        y: 753
+        width: 416
+        height: 295
       alignment: 9
-      pivot: {x: .501219511, y: .501712322}
+      pivot: {x: .501201928, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00007
       rect:
         serializedVersion: 2
-        x: 1928
-        y: 2826
-        width: 410
-        height: 293
-      alignment: 9
-      pivot: {x: .501219511, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sheepDead_00008
-      rect:
-        serializedVersion: 2
-        x: 1299
-        y: 4
-        width: 415
+        x: 1867
+        y: 1050
+        width: 417
         height: 296
       alignment: 9
       pivot: {x: .5, y: .501689196}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheepDead_00008
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 2266
+        width: 422
+        height: 301
+      alignment: 9
+      pivot: {x: .501184821, y: .503322244}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00009
       rect:
         serializedVersion: 2
-        x: 881
-        y: 301
-        width: 416
-        height: 296
+        x: 1890
+        y: 2569
+        width: 424
+        height: 302
       alignment: 9
-      pivot: {x: .501201928, y: .501689196}
+      pivot: {x: .501179218, y: .501655638}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00010
       rect:
         serializedVersion: 2
-        x: 1921
-        y: 2527
-        width: 417
-        height: 297
+        x: 1874
+        y: 1348
+        width: 425
+        height: 303
       alignment: 9
-      pivot: {x: .502398074, y: .503367007}
+      pivot: {x: .502352953, y: .503300309}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00011
       rect:
         serializedVersion: 2
-        x: 1727
-        y: 57
-        width: 419
-        height: 297
+        x: 1886
+        y: 1960
+        width: 427
+        height: 304
       alignment: 9
-      pivot: {x: .50238663, y: .503367007}
+      pivot: {x: .502341926, y: .501644731}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00012
       rect:
         serializedVersion: 2
-        x: 1305
-        y: 302
-        width: 420
-        height: 298
+        x: 1877
+        y: 1653
+        width: 429
+        height: 305
       alignment: 9
-      pivot: {x: .503571451, y: .505033553}
+      pivot: {x: .502331018, y: .503278673}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00013
       rect:
         serializedVersion: 2
-        x: 881
-        y: 599
-        width: 422
-        height: 298
+        x: 1415
+        y: 68
+        width: 432
+        height: 305
       alignment: 9
-      pivot: {x: .503554523, y: .505033553}
+      pivot: {x: .503472209, y: .503278673}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00014
       rect:
         serializedVersion: 2
-        x: 1751
-        y: 356
-        width: 424
-        height: 300
+        x: 1417
+        y: 375
+        width: 434
+        height: 307
       alignment: 9
-      pivot: {x: .503537714, y: .504999995}
+      pivot: {x: .503456235, y: .503257334}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00015
       rect:
         serializedVersion: 2
-        x: 1324
-        y: 602
-        width: 425
-        height: 300
+        x: 1419
+        y: 684
+        width: 436
+        height: 308
       alignment: 9
-      pivot: {x: .502352953, y: .504999995}
+      pivot: {x: .50344038, y: .504870117}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00016
       rect:
         serializedVersion: 2
-        x: 1908
-        y: 1921
-        width: 427
-        height: 301
+        x: 1423
+        y: 994
+        width: 438
+        height: 309
       alignment: 9
-      pivot: {x: .502341926, y: .506644547}
+      pivot: {x: .503424644, y: .506472468}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00017
       rect:
         serializedVersion: 2
-        x: 1908
-        y: 2224
-        width: 429
-        height: 301
+        x: 1426
+        y: 1305
+        width: 439
+        height: 309
       alignment: 9
-      pivot: {x: .504661977, y: .506644547}
+      pivot: {x: .504555821, y: .506472468}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00018
       rect:
         serializedVersion: 2
-        x: 1907
+        x: 1431
         y: 1616
-        width: 431
-        height: 303
+        width: 441
+        height: 310
       alignment: 9
-      pivot: {x: .5046404, y: .506600678}
+      pivot: {x: .504535139, y: .508064508}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00019
       rect:
         serializedVersion: 2
-        x: 2
-        y: 595
-        width: 433
-        height: 304
+        x: 1432
+        y: 1928
+        width: 443
+        height: 311
       alignment: 9
-      pivot: {x: .504618943, y: .508223712}
+      pivot: {x: .504514694, y: .506430864}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00020
       rect:
         serializedVersion: 2
-        x: 444
-        y: 595
-        width: 435
-        height: 305
+        x: 1438
+        y: 2241
+        width: 446
+        height: 313
       alignment: 9
-      pivot: {x: .504597723, y: .506557405}
+      pivot: {x: .5056054, y: .506389797}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00021
       rect:
         serializedVersion: 2
-        x: 885
-        y: 899
-        width: 437
-        height: 307
+        x: 1440
+        y: 2556
+        width: 448
+        height: 315
       alignment: 9
-      pivot: {x: .504576683, y: .506514668}
+      pivot: {x: .505580366, y: .506349206}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00022
       rect:
         serializedVersion: 2
-        x: 444
-        y: 902
-        width: 439
-        height: 308
+        x: 1453
+        y: 2873
+        width: 450
+        height: 315
       alignment: 9
-      pivot: {x: .504555821, y: .508116901}
+      pivot: {x: .50555557, y: .506349206}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00023
       rect:
         serializedVersion: 2
-        x: 2
-        y: 901
-        width: 440
-        height: 309
+        x: 1453
+        y: 3511
+        width: 452
+        height: 317
       alignment: 9
-      pivot: {x: .505681813, y: .506472468}
+      pivot: {x: .505530953, y: .506309152}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00024
       rect:
         serializedVersion: 2
-        x: 1836
-        y: 658
-        width: 442
-        height: 310
+        x: 1453
+        y: 3190
+        width: 452
+        height: 319
       alignment: 9
-      pivot: {x: .505656123, y: .508064508}
+      pivot: {x: .505530953, y: .506269574}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00025
       rect:
         serializedVersion: 2
-        x: 1390
-        y: 904
-        width: 444
-        height: 312
+        x: 958
+        y: 110
+        width: 455
+        height: 320
       alignment: 9
-      pivot: {x: .505630612, y: .508012831}
+      pivot: {x: .504395604, y: .5078125}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00026
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 970
-        width: 446
-        height: 315
+        x: 959
+        y: 432
+        width: 456
+        height: 321
       alignment: 9
-      pivot: {x: .5056054, y: .509523809}
+      pivot: {x: .505482435, y: .50934577}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00027
       rect:
         serializedVersion: 2
-        x: 1390
-        y: 1218
-        width: 448
-        height: 316
+        x: 959
+        y: 755
+        width: 458
+        height: 324
       alignment: 9
-      pivot: {x: .505580366, y: .511075974}
+      pivot: {x: .505458534, y: .510802448}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00028
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1212
-        width: 450
-        height: 318
+        x: 961
+        y: 1081
+        width: 460
+        height: 326
       alignment: 9
-      pivot: {x: .50555557, y: .511006296}
+      pivot: {x: .505434811, y: .510736167}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00029
       rect:
         serializedVersion: 2
-        x: 468
-        y: 1212
-        width: 451
-        height: 321
+        x: 962
+        y: 1409
+        width: 462
+        height: 327
       alignment: 9
-      pivot: {x: .504434586, y: .512461066}
+      pivot: {x: .505411267, y: .512232423}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00030
       rect:
         serializedVersion: 2
-        x: 932
-        y: 1208
-        width: 456
-        height: 326
+        x: 963
+        y: 1738
+        width: 466
+        height: 332
       alignment: 9
-      pivot: {x: .505482435, y: .513803661}
+      pivot: {x: .505364835, y: .513554215}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00031
       rect:
         serializedVersion: 2
-        x: 1856
-        y: 1287
-        width: 457
-        height: 327
+        x: 963
+        y: 2072
+        width: 467
+        height: 334
       alignment: 9
-      pivot: {x: .504376352, y: .515290499}
+      pivot: {x: .504282653, y: .516467094}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00032
       rect:
         serializedVersion: 2
-        x: 1395
-        y: 1536
-        width: 459
-        height: 330
+        x: 969
+        y: 2747
+        width: 469
+        height: 336
       alignment: 9
-      pivot: {x: .504357278, y: .516666651}
+      pivot: {x: .504264414, y: .516369045}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00033
       rect:
         serializedVersion: 2
-        x: 932
-        y: 1536
-        width: 461
-        height: 331
+        x: 967
+        y: 2408
+        width: 469
+        height: 337
       alignment: 9
-      pivot: {x: .504338384, y: .518126905}
+      pivot: {x: .504264414, y: .517804146}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00034
       rect:
         serializedVersion: 2
-        x: 468
-        y: 1535
-        width: 462
-        height: 333
+        x: 485
+        y: 296
+        width: 471
+        height: 340
       alignment: 9
-      pivot: {x: .503246725, y: .518018007}
+      pivot: {x: .504246294, y: .519117653}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00035
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1532
-        width: 464
-        height: 336
+        x: 485
+        y: 638
+        width: 472
+        height: 341
       alignment: 9
-      pivot: {x: .503232777, y: .519345224}
+      pivot: {x: .503177941, y: .52052784}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00036
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1870
-        width: 465
-        height: 338
+        x: 484
+        y: 981
+        width: 473
+        height: 343
       alignment: 9
-      pivot: {x: .502150536, y: .522189379}
+      pivot: {x: .502114177, y: .520408154}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00037
       rect:
         serializedVersion: 2
-        x: 479
-        y: 1870
-        width: 467
-        height: 339
+        x: 485
+        y: 1326
+        width: 474
+        height: 345
       alignment: 9
-      pivot: {x: .502141356, y: .52359885}
+      pivot: {x: .50316453, y: .523188412}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00038
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1869
-        width: 468
-        height: 341
+        x: 485
+        y: 1673
+        width: 475
+        height: 346
       alignment: 9
-      pivot: {x: .501068354, y: .523460388}
+      pivot: {x: .502105236, y: .524566472}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00039
       rect:
         serializedVersion: 2
-        x: 1436
-        y: 1868
-        width: 469
-        height: 343
+        x: 483
+        y: 2372
+        width: 476
+        height: 347
       alignment: 9
-      pivot: {x: .502132177, y: .526239038}
+      pivot: {x: .501050413, y: .525936604}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00040
       rect:
         serializedVersion: 2
-        x: 1436
-        y: 2213
-        width: 470
-        height: 345
+        x: 485
+        y: 2021
+        width: 476
+        height: 349
       alignment: 9
-      pivot: {x: .501063824, y: .526086986}
+      pivot: {x: .501050413, y: .52578795}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00041
       rect:
         serializedVersion: 2
-        x: 960
-        y: 2212
-        width: 474
-        height: 350
+        x: 485
+        y: 2721
+        width: 480
+        height: 354
       alignment: 9
-      pivot: {x: .501054823, y: .527142882}
+      pivot: {x: .501041651, y: .526836157}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00042
       rect:
         serializedVersion: 2
         x: 2
-        y: 2210
-        width: 475
-        height: 352
+        y: 133
+        width: 479
+        height: 356
       alignment: 9
-      pivot: {x: .5, y: .526988626}
+      pivot: {x: .5, y: .526685417}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00043
       rect:
         serializedVersion: 2
-        x: 482
-        y: 2211
-        width: 476
-        height: 354
+        x: 2
+        y: 491
+        width: 481
+        height: 359
       alignment: 9
-      pivot: {x: .498949587, y: .526836157}
+      pivot: {x: .5, y: .525069654}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00044
       rect:
         serializedVersion: 2
-        x: 482
-        y: 2567
-        width: 476
-        height: 357
+        x: 2
+        y: 1222
+        width: 480
+        height: 361
       alignment: 9
-      pivot: {x: .498949587, y: .525210083}
+      pivot: {x: .498958319, y: .524930775}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00045
       rect:
         serializedVersion: 2
         x: 2
-        y: 2564
-        width: 478
-        height: 360
+        y: 1585
+        width: 481
+        height: 363
       alignment: 9
-      pivot: {x: .498953968, y: .523611128}
+      pivot: {x: .49792099, y: .524793386}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00046
       rect:
         serializedVersion: 2
-        x: 966
-        y: 2564
-        width: 478
-        height: 362
+        x: 2
+        y: 1950
+        width: 481
+        height: 365
       alignment: 9
-      pivot: {x: .498953968, y: .523480654}
+      pivot: {x: .49792099, y: .524657547}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00047
       rect:
         serializedVersion: 2
-        x: 1447
-        y: 2930
-        width: 479
-        height: 364
+        x: 969
+        y: 3085
+        width: 482
+        height: 367
       alignment: 9
-      pivot: {x: .497912318, y: .523351669}
+      pivot: {x: .496887952, y: .524523139}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00048
       rect:
         serializedVersion: 2
-        x: 966
-        y: 2928
-        width: 479
-        height: 366
+        x: 1453
+        y: 3830
+        width: 482
+        height: 368
       alignment: 9
-      pivot: {x: .497912318, y: .523224056}
+      pivot: {x: .496887952, y: .523097813}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00049
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2926
-        width: 480
-        height: 368
+        x: 969
+        y: 3454
+        width: 481
+        height: 370
       alignment: 9
-      pivot: {x: .496874988, y: .523097813}
+      pivot: {x: .49584201, y: .522973001}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00050
       rect:
         serializedVersion: 2
-        x: 484
-        y: 2926
-        width: 480
-        height: 369
+        x: 485
+        y: 3077
+        width: 482
+        height: 371
       alignment: 9
-      pivot: {x: .496874988, y: .521680236}
+      pivot: {x: .494813263, y: .521563351}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00051
       rect:
         serializedVersion: 2
-        x: 484
-        y: 3297
-        width: 480
-        height: 371
+        x: 485
+        y: 3450
+        width: 482
+        height: 372
       alignment: 9
-      pivot: {x: .494791657, y: .521563351}
+      pivot: {x: .494813263, y: .522849441}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00052
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3296
-        width: 480
+        x: 969
+        y: 3826
+        width: 482
         height: 372
       alignment: 9
-      pivot: {x: .494791657, y: .522849441}
+      pivot: {x: .494813263, y: .522849441}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00053
       rect:
         serializedVersion: 2
-        x: 968
-        y: 3296
-        width: 480
-        height: 373
+        x: 485
+        y: 3824
+        width: 482
+        height: 374
       alignment: 9
-      pivot: {x: .494791657, y: .521447718}
+      pivot: {x: .494813263, y: .522727251}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00054
       rect:
         serializedVersion: 2
-        x: 968
-        y: 3671
-        width: 480
-        height: 375
+        x: 2
+        y: 3067
+        width: 481
+        height: 374
       alignment: 9
-      pivot: {x: .494791657, y: .521333337}
+      pivot: {x: .493763, y: .522727251}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00055
       rect:
         serializedVersion: 2
         x: 2
-        y: 3670
+        y: 3821
         width: 481
-        height: 376
+        height: 377
       alignment: 9
-      pivot: {x: .493763, y: .522606373}
+      pivot: {x: .493763, y: .523872674}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00056
       rect:
         serializedVersion: 2
-        x: 485
-        y: 3670
+        x: 2
+        y: 3443
         width: 481
         height: 376
       alignment: 9
-      pivot: {x: .493763, y: .522606373}
+      pivot: {x: .493763, y: .525265932}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00057
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 3671
+        x: 2
+        y: 2691
         width: 479
-        height: 375
+        height: 374
       alignment: 9
-      pivot: {x: .493736953, y: .523999989}
+      pivot: {x: .493736953, y: .525401056}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00058
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 3296
+        x: 2
+        y: 2317
         width: 478
-        height: 373
+        height: 372
       alignment: 9
-      pivot: {x: .492677838, y: .524128675}
+      pivot: {x: .492677838, y: .52553761}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00059
       rect:
         serializedVersion: 2
-        x: 1447
-        y: 2560
+        x: 2
+        y: 852
         width: 472
         height: 368
       alignment: 9
-      pivot: {x: .492584735, y: .523097813}
+      pivot: {x: .492584735, y: .525815189}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sheepDead_00060
       rect:
         serializedVersion: 2
-        x: 1931
-        y: 3708
+        x: 1907
+        y: 3490
         width: 407
         height: 338
       alignment: 9

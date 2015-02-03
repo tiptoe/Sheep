@@ -5,7 +5,7 @@ public class BorderBehaviour : MonoBehaviour {
 
 	public LevelController _LevelController;
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider collision)
 	{
 		if(collision.gameObject.tag == "Sheep")
 		{

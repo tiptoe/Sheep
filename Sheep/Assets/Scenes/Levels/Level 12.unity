@@ -3400,6 +3400,7 @@ GameObject:
   - 65: {fileID: 368658985}
   - 23: {fileID: 368658984}
   - 114: {fileID: 368658983}
+  - 54: {fileID: 368658988}
   m_Layer: 0
   m_Name: BorderNorth
   m_TagString: Untagged
@@ -3449,7 +3450,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 1557638558}
   m_GameObject: {fileID: 368658982}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3474,6 +3475,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 199368678}
   m_RootOrder: 2
+--- !u!54 &368658988
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: a35b116c541b85a4687d5f170048bc22,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557638558}
+  m_GameObject: {fileID: 368658982}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &371874293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,6 +4042,7 @@ GameObject:
   - 65: {fileID: 412838132}
   - 23: {fileID: 412838131}
   - 114: {fileID: 412838130}
+  - 54: {fileID: 412838134}
   m_Layer: 0
   m_Name: BorderWest
   m_TagString: Untagged
@@ -4086,7 +4104,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 1546332792}
   m_GameObject: {fileID: 412838128}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4099,6 +4117,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1546332792}
   m_GameObject: {fileID: 412838128}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &412838134
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: e66a6961560e2884583b8ece476f25db,
+    type: 2}
+  m_PrefabInternal: {fileID: 1546332792}
+  m_GameObject: {fileID: 412838128}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &417849743
 Prefab:
   m_ObjectHideFlags: 0
@@ -5271,6 +5305,7 @@ GameObject:
   - 65: {fileID: 501672418}
   - 23: {fileID: 501672417}
   - 114: {fileID: 501672416}
+  - 54: {fileID: 501672420}
   m_Layer: 0
   m_Name: BorderEast
   m_TagString: Untagged
@@ -5332,7 +5367,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 1006519081}
   m_GameObject: {fileID: 501672414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5345,6 +5380,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1006519081}
   m_GameObject: {fileID: 501672414}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &501672420
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: e4799bd3eee555a4c9bd52f5cba5b571,
+    type: 2}
+  m_PrefabInternal: {fileID: 1006519081}
+  m_GameObject: {fileID: 501672414}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &502843812
 GameObject:
   m_ObjectHideFlags: 0
@@ -11315,7 +11366,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 634381194}
   m_GameObject: {fileID: 1278135298}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .200000003
@@ -15800,7 +15851,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 1301361131}
   m_GameObject: {fileID: 1848685286}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .200000003
@@ -18001,6 +18052,7 @@ GameObject:
   - 65: {fileID: 2042731812}
   - 23: {fileID: 2042731811}
   - 114: {fileID: 2042731810}
+  - 54: {fileID: 2042731814}
   m_Layer: 0
   m_Name: BorderSouth
   m_TagString: Untagged
@@ -18062,7 +18114,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 224440033}
   m_GameObject: {fileID: 2042731808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -18075,6 +18127,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 224440033}
   m_GameObject: {fileID: 2042731808}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2042731814
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: cf8c738f9a06fba498b44ea2a63b629c,
+    type: 2}
+  m_PrefabInternal: {fileID: 224440033}
+  m_GameObject: {fileID: 2042731808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2043532091
 GameObject:
   m_ObjectHideFlags: 0

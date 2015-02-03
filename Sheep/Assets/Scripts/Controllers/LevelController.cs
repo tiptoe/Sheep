@@ -14,6 +14,8 @@ public class LevelController : MonoBehaviour {
 	private int aliveWolves = 0;
 
 	public int Score = 0;
+	public int SheepPenalty = 1000;
+	public int WolfBonus = 250;
 	public int BronzeThreshold = 100;
 	public int SilverThreshold = 500;
 	public int GoldThreshold = 1000;
@@ -86,11 +88,13 @@ public class LevelController : MonoBehaviour {
 			case Animals.Wolf:
 			{
 				--aliveWolves;
+				AddScore(WolfBonus);
 				break;
 			}
 			case Animals.Sheep:
 			{
 				--aliveSheeps;
+				AddScore(-1*SheepPenalty);
 				break;
 			}
 		}

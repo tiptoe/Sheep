@@ -722,7 +722,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 188860, guid: 51ee0c46a2b61144e982e8938281a7a4, type: 2}
   amount: 1
   infinityAmount: 0
-  score: -30
+  score: -100
 --- !u!114 &11416400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -908,8 +908,8 @@ MonoBehaviour:
   amount: 0
   infinityAmount: 1
   score: -5
-  minLength: .5
-  maxLength: 7
+  minLength: 1
+  maxLength: 5
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
 --- !u!114 &11454220
 MonoBehaviour:
@@ -1145,7 +1145,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: fc969e2c48ff2f44581238f726d53c16, type: 2}
   amount: 3
   infinityAmount: 0
-  score: -10
+  score: -50
 --- !u!114 &11455612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1272,9 +1272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolPrefab: {fileID: 100000, guid: 3fb8106698b4de04fa5061dc900ff557, type: 2}
-  amount: 3
+  amount: 0
   infinityAmount: 0
-  score: -10
+  score: -50
 --- !u!114 &11457740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1567,15 +1567,15 @@ RectTransform:
   m_LocalScale: {x: 1.00755668, y: 1.00755668, z: 1.00755668}
   m_Children:
   - {fileID: 22454218}
-  - {fileID: 22457740}
   - {fileID: 22455612}
+  - {fileID: 22457740}
   - {fileID: 22416398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: .179550394, y: 1}
-  m_AnchoredPosition: {x: -15, y: -19}
-  m_SizeDelta: {x: -31, y: -42}
+  m_AnchoredPosition: {x: 128.134857, y: 114.419403}
+  m_SizeDelta: {x: 256.269745, y: -228.838806}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22416386
 RectTransform:
@@ -1946,10 +1946,10 @@ RectTransform:
   - {fileID: 22455610}
   - {fileID: 22455606}
   m_Father: {fileID: 22400028}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.9000015, y: -243.800003}
+  m_AnchoredPosition: {x: 55.9000015, y: -151.100006}
   m_SizeDelta: {x: 81.7939987, y: 81.8000031}
   m_Pivot: {x: .50000006, y: .50000006}
 --- !u!224 &22457740
@@ -1967,10 +1967,10 @@ RectTransform:
   - {fileID: 22457742}
   - {fileID: 22457746}
   m_Father: {fileID: 22400028}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.9000015, y: -151.100006}
+  m_AnchoredPosition: {x: 55.9000015, y: -243.800003}
   m_SizeDelta: {x: 81.7939987, y: 81.8000031}
   m_Pivot: {x: .50000006, y: .50000006}
 --- !u!224 &22457742

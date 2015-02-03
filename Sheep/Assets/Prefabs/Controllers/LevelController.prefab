@@ -111,21 +111,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a115bec2876a24c93b0b84ab16d13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
-  Length: 50
-  SpawnWolvesAt: 40
-  intervalPoints: 10
+  Id: 1
+  Length: 90
+  SpawnWolvesAt: 45
+  intervalPoints: 200
   intervalLength: 5
   Sheeps:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  Wolves:
-  - {fileID: 0}
+  Wolves: []
   Score: 0
-  BronzeThreshold: 100
-  SilverThreshold: 500
-  GoldThreshold: 1000
+  SheepPenalty: 1000
+  WolfBonus: 250
+  BronzeThreshold: 1800
+  SilverThreshold: 2520
+  GoldThreshold: 3240
   _GUIController: {fileID: 0}
   _GameController: {fileID: 0}
 --- !u!1001 &100100000

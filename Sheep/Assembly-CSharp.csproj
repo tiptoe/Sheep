@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Controllers\ToolsController.cs" />
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
+     <Compile Include="Assets\Scripts\GUI\ButtonPause.cs" />
      <Compile Include="Assets\Scripts\GUI\ScoreChange.cs" />
      <Compile Include="Assets\Scripts\GUI\TimeHorizon.cs" />
      <Compile Include="Assets\Scripts\Objects\BorderBehaviour.cs" />
@@ -92,6 +93,7 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\codeandweb.com\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

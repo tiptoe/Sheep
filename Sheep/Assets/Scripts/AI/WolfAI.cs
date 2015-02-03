@@ -421,7 +421,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void SetDead()
     {
-        throw new System.NotImplementedException();
+       //doplnit 
     }
 
     public GameObject FindFood(bool near= false)

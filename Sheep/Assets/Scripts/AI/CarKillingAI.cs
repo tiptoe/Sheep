@@ -17,7 +17,7 @@ public class CarKillingAI : MonoBehaviour {
 			_LevelController.AnimalDied(Animals.Sheep);
 		}else if(collision.gameObject.tag == "Wolf")
 		{
-			//collision.gameObject.GetComponent<WolfAI>().SetDead();
+			collision.gameObject.GetComponent<WolfAI>().SetDead();
 			collision.gameObject.SetActive(false);
 			_LevelController.AnimalDied(Animals.Wolf);
 		}

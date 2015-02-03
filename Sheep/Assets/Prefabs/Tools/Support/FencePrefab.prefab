@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 400004}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   - 212: {fileID: 21200000}
   m_Layer: 0
   m_Name: FenceStart
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - 212: {fileID: 21200004}
   m_Layer: 0
   m_Name: FenceEnd
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

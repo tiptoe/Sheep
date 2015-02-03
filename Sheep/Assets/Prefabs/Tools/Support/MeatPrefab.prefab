@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7549351fda630a4aa5ca1c0852e944c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepInterest: 0
-  wolfInterest: 1
+  sheepInterest: 1
+  wolfInterest: 2
 --- !u!114 &11437768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cea5e168b8a3104bbe9fd619996b3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eatingTime: 2
 --- !u!114 &11439462
 MonoBehaviour:
   m_ObjectHideFlags: 1

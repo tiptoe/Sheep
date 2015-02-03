@@ -75,12 +75,12 @@
      <Compile Include="Assets\Scripts\Tools\Support\ChangeFenceColor.cs" />
      <Compile Include="Assets\Scripts\Tools\Support\DragTool.cs" />
      <Compile Include="Assets\Scripts\Tools\Support\FenceDraw.cs" />
-     <Compile Include="Assets\Scripts\Tools\Support\InnerTrigger.cs" />
-     <Compile Include="Assets\Scripts\Tools\Support\OuterTrigger.cs" />
+     <Compile Include="Assets\Scripts\Tools\Support\MeatPrefab.cs" />
      <Compile Include="Assets\Scripts\Tools\Support\SingleTouchTool.cs" />
-     <Compile Include="Assets\Scripts\Tools\Support\SunflowerEventManager.cs" />
+     <Compile Include="Assets\Scripts\Tools\Support\SunflowerPrefab.cs" />
      <Compile Include="Assets\Scripts\Tools\Support\Tool.cs" />
      <Compile Include="Assets\Scripts\Tools\Support\TrapPrefab.cs" />
+     <Compile Include="Assets\Scripts\Tools\Support\TriggerZone.cs" />
      <Compile Include="Assets\Scripts\Tools\Trap.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />

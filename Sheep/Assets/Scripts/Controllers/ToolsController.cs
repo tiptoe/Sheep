@@ -7,7 +7,7 @@ public class ToolsController : MonoBehaviour {
 
     Tool[] tools;
 
-    void Start()
+    void OnEnable()
     {
         LoadTools();
     }

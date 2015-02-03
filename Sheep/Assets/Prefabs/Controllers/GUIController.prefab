@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400474}
+  - 114: {fileID: 11400474}
+  m_Layer: 0
+  m_Name: GUIController
+  m_TagString: GUIController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400474
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9011aba014b1cb4e9a0e1183eccaf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePrefab: {fileID: 11492904, guid: 3aa256f458629cd419b0b32f786b2c5a, type: 2}
+  scoreChangePrefab: {fileID: 11448530, guid: 349c6e3edde00324eb2334d2af1dd3e7, type: 2}
+  timeHorizonPrefab: {fileID: 11451486, guid: 4a838829fee84184c9af33e6aee1a775, type: 2}
+  buttonPausePrefab: {fileID: 133622, guid: e5a27cd38c5ec75459dbeeb14f90f8ea, type: 2}
+  timeHorizon: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  EndRoundMenu: {fileID: 0}
+  RewardON: {fileID: 21300000, guid: 19916478e1aa35949be04bd78196a26d, type: 3}
+  RewardOFF: {fileID: 21300000, guid: c4218ada0e938df46a4cf6c460983181, type: 3}
+  Reward1: {fileID: 0}
+  Reward2: {fileID: 0}
+  Reward3: {fileID: 0}
+  AudioToggle: {fileID: 0}
+  AudioBackgroundSlider: {fileID: 0}
+  AudioSoundsSlider: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100474}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

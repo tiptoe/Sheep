@@ -413,6 +413,10 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void DeadOccurs(Vector3 position)
     {
+        if (aiAgent == null || aiAgent.destination == null)
+        {
+            return;
+        }
         if (aiAgent.destination == position)
         {
             ChangeMood();

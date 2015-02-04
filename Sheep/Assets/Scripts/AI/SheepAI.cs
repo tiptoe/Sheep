@@ -502,15 +502,15 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 	//Animation methods
 
   	void CalmSheepAnimation(){
-		anim.SetBool ("Running", false);
+//		anim.SetBool ("Running", false);
 		}
 
 	void RunningSheepAnimation(){
-		anim.SetBool ("Running", true);
+//		anim.SetBool ("Running", true);
 		}
 
 	void DeathSheepAnimation(){
-		anim.SetTrigger ("Death");
+//		anim.SetTrigger ("Death");
 		//StartCoroutine("InstantiateBlood");
 		}
 

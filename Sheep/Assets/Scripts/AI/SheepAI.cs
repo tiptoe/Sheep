@@ -59,12 +59,21 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// složí k tomu aby se neměli cíle moc brzy po sobě
     /// </summary>
     private float helpMoodChangeCounter = 1.0f;
+
+	//  private Animator anim;
+	/// <summary>
+	/// složí na animace
+	/// </summary>
+	private Animator anim;
+
+	public GameObject blood;
   
 
     // Use this for initialization
     void Start()
     {
         aiAgent = GetComponent<NavMeshAgent>();
+		anim = GetComponentInChildren<Animator> ();
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2 +0.05f) - moodChangeRange;
         ChangeTargetNormal();
     
@@ -100,6 +109,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             case AIStates.Scared: UpdateScared(); break;
             case AIStates.Eat: UpdateEat(); break;
         }
+
     }
 
 
@@ -476,8 +486,24 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 		AudioSource.PlayClipAtPoint(audio.clip,transform.position,audio.volume);
     }
 
-  
+	//Animation methods
 
+  	void CalmSheepAnimation(){
+		anim.SetBool ("Running", false);
+		}
 
+	void RunningSheepAnimation(){
+		anim.SetBool ("Running", true);
+		}
+
+	void DeathSheepAnimation(){
+		anim.SetTrigger ("Death");
+		InstantiateBlood ();
+		}
+
+	IEnumerator InstantiateBlood(){
+		yield return new WaitForSeconds (2);
+		Instantiate (blood, transform.position, transform.rotation);
+		}
 
 }

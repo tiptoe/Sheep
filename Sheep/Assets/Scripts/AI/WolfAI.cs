@@ -65,10 +65,16 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     /// </summary>
     private float helpMoodChangeCounter = 1.0f;
 
+	//  private Animator anim;
+	/// <summary>
+	/// složí na animace
+	/// </summary>
+	private Animator anim;
 
     void Start()
     {
         aiAgent = GetComponent<NavMeshAgent>();
+		anim = GetComponentInChildren<Animator> ();
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
         ChangeMood();
     }
@@ -536,6 +542,21 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             //Debug.Log("kolize ne ovečka");
         }
     }
+
+	
+	//Animation methods
+	
+	void CalmWolfAnimation(){
+		anim.SetBool ("Waiting", true);
+	}
+	
+	void RunningWolfAnimation(){
+		anim.SetBool ("Waiting", false);
+	}
+	
+	void EatingWolfAnimation(){
+		anim.SetTrigger ("Eating");
+	}
 
    
     //pak sem ještě patří když v okolí bude ovečka/maso? tak jít do hunting

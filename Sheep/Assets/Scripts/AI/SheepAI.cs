@@ -494,7 +494,8 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         DeathSheepAnimation();
         if (blood != null)
         {
-            Instantiate(blood, transform.position, transform.rotation);
+          GameObject o = (GameObject) Instantiate(blood, transform.position, transform.rotation);
+          o.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
         }
     }
 

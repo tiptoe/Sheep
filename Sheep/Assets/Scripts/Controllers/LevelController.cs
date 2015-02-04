@@ -21,7 +21,7 @@ public class LevelController : MonoBehaviour {
 	public int GoldThreshold = 1000;
 	public bool IsLevelDone = false;
 
-	public GUIController _GUIController;
+	private GUIController _GUIController;
 	public GameController _GameController;
 
     private float lastIntervalTime;
@@ -30,6 +30,10 @@ public class LevelController : MonoBehaviour {
 
 	void Awake()
 	{
+        GameObject obj = GameObject.FindGameObjectWithTag("GUIController");
+        if (obj)
+            _GUIController = obj.GetComponent<GUIController>();
+
 		_GameController = FindGameController();
         lengthMax = Length;
 	}

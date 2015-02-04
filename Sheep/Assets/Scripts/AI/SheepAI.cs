@@ -492,7 +492,6 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
 		AudioSource.PlayClipAtPoint(audio.clip,transform.position,audio.volume);
         DeathSheepAnimation();
-        InstantiateBlood();
     }
 
 	//Animation methods
@@ -507,7 +506,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
 	void DeathSheepAnimation(){
 		anim.SetTrigger ("Death");
-		InstantiateBlood ();
+		StartCoroutine("InstantiateBlood");
 		}
 
 	IEnumerator InstantiateBlood(){

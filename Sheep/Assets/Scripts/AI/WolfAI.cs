@@ -167,6 +167,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         if (aiAgent.remainingDistance < 1.0f || (aiAgent.updatePosition && aiAgent.remainingDistance >= remainingDistance && helpMoodChangeCounter <= 0))
         {
             Debug.Log("target is lost");
+            CalmWolfAnimation();
             ChangeTargetTracking();
         }
         remainingDistance = aiAgent.remainingDistance;

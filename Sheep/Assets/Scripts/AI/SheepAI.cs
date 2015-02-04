@@ -184,6 +184,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         if (aiAgent.remainingDistance <0.5f||(aiAgent.updatePosition && aiAgent.remainingDistance > remainingDistance && helpMoodChangeCounter <= 0))
         {
             //dosáhl cíle tak se zastaví
+            CalmSheepAnimation();
             aiAgent.Stop();
            // ChangeTargetInterested();
         }
@@ -262,6 +263,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         if (aiAgent.remainingDistance < 0.1f)
         {
             aiAgent.Stop();
+            CalmSheepAnimation();
         }
     }
 

@@ -506,12 +506,17 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
 	void DeathSheepAnimation(){
 		anim.SetTrigger ("Death");
-		StartCoroutine("InstantiateBlood");
+		//StartCoroutine("InstantiateBlood");
 		}
 
-	IEnumerator InstantiateBlood(){
+	/*IEnumerator InstantiateBlood(){
 		yield return new WaitForSeconds (2);
 		Instantiate (blood, transform.position, transform.rotation);
-		}
+		}*/
+
+    void OnDestroy()
+    {
+        Instantiate(blood, transform.position, transform.rotation);
+    }
 
 }

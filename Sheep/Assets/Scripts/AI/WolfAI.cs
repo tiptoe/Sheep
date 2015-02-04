@@ -283,7 +283,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     public void ChangeMood()
     {
         gameObjectTarget = null;
-
+        CalmWolfAnimation();
         aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed;
        // Debug.Log("change mood??");
@@ -295,8 +295,9 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         {
             Debug.Log("prioritní jidlo");
             wolfState = AIStates.Hunting;
-
+            RunningWolfAnimation();
             SetHuntingTarget(nearFood);
+
             return;
         }
         if (wolfState != AIStates.Eat && wolfState != AIStates.Hunting)
@@ -305,7 +306,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             if (target != null)
             {
                 wolfState = AIStates.Hunting;
-
+                RunningWolfAnimation();
                 SetHuntingTarget(target);
                 return;
             }
@@ -316,23 +317,27 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         if (wolfState == AIStates.Tracking)
         {
           //  Debug.Log("normal state");
+            CalmWolfAnimation();
             wolfState = AIStates.Normal;
         }
         else if (wolfState == AIStates.Normal)
         {
           //  Debug.Log("tracking state");
             wolfState = AIStates.Tracking;
+            RunningWolfAnimation();
             ChangeTargetTracking();
 
         }
         else if (wolfState == AIStates.Hunting)
         {
            // Debug.Log("now not hunt");
+            CalmWolfAnimation();
             wolfState = AIStates.Normal;
         }
         else if (wolfState == AIStates.Eat)
         {
             //Debug.Log("again hungry");
+            CalmWolfAnimation();
             wolfState = AIStates.Normal;
 
         }
@@ -342,7 +347,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     {
         if (newState == AIStates.Eat)
         {
-          //  aiAgent.Stop();
+            EatingWolfAnimation();
+            //  aiAgent.Stop();
         }
         
         wolfState = newState;
@@ -351,7 +357,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 
     public void Spawn()
     {
-        throw new System.NotImplementedException();
+       //
     }
 
     /// <summary>
@@ -361,7 +367,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     /// <param name="priority"></param>
     public void SetTarget(Transform target, int priority)
     {
-        throw new System.NotImplementedException();
+        //
     }
 
     public void FenceBuild()
@@ -508,7 +514,8 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             LevelController controller = FindObjectOfType<LevelController>();
             if (controller != null)
             {
-               
+
+                EatingWolfAnimation();
                 foreach (GameObject sheepGO in controller.Sheeps)
                 {
                     if (sheepGO == null) { continue; }
@@ -555,7 +562,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 	}
 	
 	void EatingWolfAnimation(){
-		anim.SetTrigger ("Eating");
+		anim.SetTrigger("Eating");
 	}
 
    

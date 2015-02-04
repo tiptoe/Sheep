@@ -316,6 +316,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
             aiAgent.SetDestination(possibleRuntargets[r]);
         }
         Debug.Log("runn");
+        RunningSheepAnimation();
         aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed * scaredSpeedChange;
        // helpNormalCounter = 1.0f;
@@ -345,22 +346,26 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         {
             //Debug.Log("normal state");
             sheepState = AIStates.Normal;
+            CalmSheepAnimation();
         }
         else if (sheepState == AIStates.Normal)
         {
             //Debug.Log("Interest state");
             sheepState = AIStates.Interested;
             ChangeTargetInterested();
+            RunningSheepAnimation();
         }
         else if (sheepState == AIStates.Scared)
         {
            // Debug.Log("now not scared");
             sheepState = AIStates.Normal;
+            CalmSheepAnimation();
         }
         else if (sheepState == AIStates.Eat)
         {
             //Debug.Log("end eating");
             sheepState = AIStates.Normal;
+            CalmSheepAnimation();
         }
         //   aiAgent.Resume();
         // ChangeTargetInterested();
@@ -388,7 +393,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     }
 
 
-    //zatin nedokončené
+  
 
     /// <summary>
     /// nepoužívá se vubec
@@ -397,7 +402,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     /// <param name="priority"></param>
     public void SetTarget(Transform target, int priority)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
 
@@ -484,6 +489,8 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     public void SetDead()
     {
 		AudioSource.PlayClipAtPoint(audio.clip,transform.position,audio.volume);
+        DeathSheepAnimation();
+        InstantiateBlood();
     }
 
 	//Animation methods

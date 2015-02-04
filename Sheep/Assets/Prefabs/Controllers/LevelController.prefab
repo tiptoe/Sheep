@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 1
-  Length: 90
-  SpawnWolvesAt: 45
+  Length: 60
+  SpawnWolvesAt: 30
   intervalPoints: 200
   intervalLength: 5
   Sheeps:

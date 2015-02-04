@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
 
 	private const string SAVEFILENAME = "/progressInfo.dat";
 
-	private GameProgress gameProgress;
+	public GameProgress gameProgress;
 
 	//prevent doubling
 	static GameController instance;
@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour {
 			FileStream file = File.Open(Application.persistentDataPath + SAVEFILENAME, FileMode.Open);
 
 			gameProgress = (GameProgress)bf.Deserialize(file);
+			gameProgress.Levels[0].Enabled = true;
 			file.Close();
 		}else
 		{
@@ -120,7 +121,7 @@ public class GameController : MonoBehaviour {
 }
 
 [Serializable]
-class GameProgress {
+public class GameProgress {
 	public List<LevelProgress> Levels;
 
 	public GameProgress()
@@ -130,7 +131,7 @@ class GameProgress {
 }
 
 [Serializable]
-class LevelProgress {	
+public class LevelProgress {	
 	public int Score;
 	public int Stars;
 	public bool Enabled;

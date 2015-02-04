@@ -1346,8 +1346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 6
-  Length: 90
-  SpawnWolvesAt: 45
+  Length: 60
+  SpawnWolvesAt: 30
   intervalPoints: 100
   intervalLength: 5
   Sheeps:
@@ -1357,9 +1357,9 @@ MonoBehaviour:
   Score: 0
   SheepPenalty: 500
   WolfBonus: 250
-  BronzeThreshold: 900
-  SilverThreshold: 1260
-  GoldThreshold: 1620
+  BronzeThreshold: 600
+  SilverThreshold: 840
+  GoldThreshold: 1080
   _GUIController: {fileID: 1978683194}
   _GameController: {fileID: 0}
 --- !u!4 &157371022
@@ -3039,15 +3039,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: BronzeThreshold
-      value: 900
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: SilverThreshold
-      value: 1260
+      value: 840
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: GoldThreshold
-      value: 1620
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
@@ -4233,7 +4233,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 039310809545eb447814fff4d091040a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 039310809545eb447814fff4d091040a, type: 2}
@@ -7597,6 +7597,10 @@ Prefab:
       propertyPath: amount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11454218, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
+      propertyPath: score
+      value: -25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
   m_RootGameObject: {fileID: 1218106975}
@@ -9146,7 +9150,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: 6f3d0cbff8d43c64a8ded8401f77f35f, type: 2}
   amount: 0
   infinityAmount: 1
-  score: -50
+  score: -25
   minLength: 1
   maxLength: 5
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
@@ -9293,7 +9297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1099084928
 Transform:
   m_ObjectHideFlags: 0

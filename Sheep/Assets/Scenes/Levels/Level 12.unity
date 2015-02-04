@@ -6247,7 +6247,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: 6f3d0cbff8d43c64a8ded8401f77f35f, type: 2}
   amount: 0
   infinityAmount: 1
-  score: -50
+  score: -25
   minLength: 1
   maxLength: 5
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
@@ -8805,6 +8805,10 @@ Prefab:
     - target: {fileID: 11416398, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
       propertyPath: amount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454218, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
+      propertyPath: score
+      value: -25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
@@ -14652,15 +14656,15 @@ Prefab:
       objectReference: {fileID: 1955794224}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: BronzeThreshold
-      value: 2050
+      value: 1450
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: SilverThreshold
-      value: 2870
+      value: 2030
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: GoldThreshold
-      value: 3690
+      value: 2610
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
@@ -16712,8 +16716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 12
-  Length: 90
-  SpawnWolvesAt: 45
+  Length: 60
+  SpawnWolvesAt: 30
   intervalPoints: 200
   intervalLength: 5
   Sheeps:
@@ -16725,9 +16729,9 @@ MonoBehaviour:
   Score: 0
   SheepPenalty: 500
   WolfBonus: 250
-  BronzeThreshold: 2050
-  SilverThreshold: 2870
-  GoldThreshold: 3690
+  BronzeThreshold: 1450
+  SilverThreshold: 2030
+  GoldThreshold: 2610
   _GUIController: {fileID: 123735941}
   _GameController: {fileID: 0}
 --- !u!1 &1922754709

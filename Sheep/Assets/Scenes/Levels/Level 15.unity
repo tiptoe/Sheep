@@ -12065,15 +12065,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: BronzeThreshold
-      value: 3600
+      value: 2400
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: SilverThreshold
-      value: 5040
+      value: 3360
       objectReference: {fileID: 0}
     - target: {fileID: 11429122, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
       propertyPath: GoldThreshold
-      value: 6480
+      value: 4320
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ba20f0148b42034da8a70660c7bd35f, type: 2}
@@ -13203,7 +13203,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: 6f3d0cbff8d43c64a8ded8401f77f35f, type: 2}
   amount: 0
   infinityAmount: 1
-  score: -50
+  score: -25
   minLength: 1
   maxLength: 5
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
@@ -13564,8 +13564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 15
-  Length: 90
-  SpawnWolvesAt: 45
+  Length: 60
+  SpawnWolvesAt: 30
   intervalPoints: 400
   intervalLength: 5
   Sheeps:
@@ -13579,9 +13579,9 @@ MonoBehaviour:
   Score: 0
   SheepPenalty: 500
   WolfBonus: 250
-  BronzeThreshold: 3600
-  SilverThreshold: 5040
-  GoldThreshold: 6480
+  BronzeThreshold: 2400
+  SilverThreshold: 3360
+  GoldThreshold: 4320
   _GUIController: {fileID: 16610976}
   _GameController: {fileID: 0}
 --- !u!1 &1436557610
@@ -18939,6 +18939,10 @@ Prefab:
     - target: {fileID: 11416398, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
       propertyPath: amount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454218, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}
+      propertyPath: score
+      value: -25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2515f14ac8b374c90f106b862db06f, type: 2}

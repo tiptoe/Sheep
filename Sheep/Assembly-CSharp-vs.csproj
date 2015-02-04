@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Pond.cs" />
      <Compile Include="Assets\Scripts\AI\CarAI.cs" />
      <Compile Include="Assets\Scripts\AI\CarKillingAI.cs" />
      <Compile Include="Assets\Scripts\AI\GameObjectInfo.cs" />
@@ -64,7 +65,8 @@
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
      <Compile Include="Assets\Scripts\GUI\ButtonPause.cs" />
-     <Compile Include="Assets\Scripts\GUI\LevelListItem.cs" />
+     <Compile Include="Assets\Scripts\GUI\LevelList.cs" />
+     <Compile Include="Assets\Scripts\GUI\LevelListItemController.cs" />
      <Compile Include="Assets\Scripts\GUI\ScoreChange.cs" />
      <Compile Include="Assets\Scripts\GUI\TimeHorizon.cs" />
      <Compile Include="Assets\Scripts\Objects\BorderBehaviour.cs" />

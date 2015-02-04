@@ -16,6 +16,13 @@ public class LevelList : MonoBehaviour
     public List<LevelListItemInfo> levelsInfo;
     public LevelListItemController levelListItemPrefab;
 
+	public GameController _GameController;
+
+	void Awake()
+	{
+		_GameController = FindGameController();
+	}
+
     void Start()
     {
         Initialize();
@@ -28,6 +35,19 @@ public class LevelList : MonoBehaviour
             Debug.LogError("Levels info missing.");
             return;
         }
+
+		int i = 1;
+		foreach (var level in _GameController.gameProgress.Levels)
+		{
+			LevelListItemInfo levelItem = new LevelListItemInfo();
+			levelItem.open = level.Enabled;
+			levelItem.protectorsNum = level.Stars;
+			levelItem.levelNum = i.ToString();
+			levelItem.levelName = "Level " + i.ToString();
+			levelsInfo.Add(levelItem);
+			++i;
+		}
+
         foreach (var levelInfo in levelsInfo)
         {
             LevelListItemController levelItem = GameObject.Instantiate(levelListItemPrefab) as LevelListItemController;
@@ -38,4 +58,21 @@ public class LevelList : MonoBehaviour
             levelItem.transform.SetParent(transform);
         }
     }
+
+	public GameController FindGameController()
+	{
+		GameObject gameControllerObject = GameObject.Find("GameController");
+		if(gameControllerObject != null)
+		{
+			return gameControllerObject.GetComponent<GameController>();
+		}else
+		{
+			gameControllerObject = new GameObject();
+			gameControllerObject.name = "GameController";
+			gameControllerObject.AddComponent<GameController>();
+			//Instantiate(gameControllerObject);
+			
+			return gameControllerObject.GetComponent<GameController>();
+		}
+	}
 }

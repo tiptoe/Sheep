@@ -1126,21 +1126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e993ecdcabce304aae8457a02ad7f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsInfo:
-  - open: 1
-    levelNum: 1
-    levelName: Level1
-    protectorsNum: 3
-  - open: 1
-    levelNum: 2
-    levelName: Level2
-    protectorsNum: 1
-  - open: 0
-    levelNum: 3
-    levelName: Level3
-    protectorsNum: 0
+  levelsInfo: []
   levelListItemPrefab: {fileID: 11488790, guid: 5b66898c27bc3004db6296ad79dda7e6,
     type: 2}
+  _GameController: {fileID: 0}
 --- !u!1 &390612655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,6 +2965,8 @@ MonoBehaviour:
   IsAudio: 1
   MusicVolume: 75
   SoundsVolume: 75
+  gameProgress:
+    Levels: []
 --- !u!1 &1397915236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:

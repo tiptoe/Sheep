@@ -12,6 +12,7 @@ TagManager:
   - Car
   - LevelController
   - GUIController
+  - MainMenuController
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

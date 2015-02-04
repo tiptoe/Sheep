@@ -36,6 +36,11 @@ public class MainMenuController : MonoBehaviour {
 		//Play.gameObject.SetActive(true);
 	}
 
+    public void LoadLevel(string levelName)
+    {
+        _GameController.LoadLevel(levelName);
+    }
+
 	public void ChangeToOptions(RectTransform activePage)
 	{
 		activePage.gameObject.SetActive(false);

@@ -513,10 +513,11 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 		yield return new WaitForSeconds (2);
 		Instantiate (blood, transform.position, transform.rotation);
 		}*/
-
+	if(blood!=null){
     void OnDestroy()
     {
         Instantiate(blood, transform.position, transform.rotation);
     }
+	}
 
 }

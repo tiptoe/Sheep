@@ -498,7 +498,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
             LevelController controller = FindObjectOfType<LevelController>();
             if (controller != null)
             {
-                controller.AnimalDied(Animals.Sheep);
+               
                 foreach (GameObject sheepGO in controller.Sheeps)
                 {
                     if (sheepGO == null) { continue; }

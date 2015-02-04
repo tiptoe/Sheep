@@ -3,24 +3,48 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class LevelListItem : MonoBehaviour, IPointerClickHandler
+public class LevelListItemController : MonoBehaviour, IPointerClickHandler
 {
+    public bool open = false;
     public string levelNum = "";
     public string levelName = "";
-    public int hatsNum = 0;
+    public int protectorsNum = 0;
     public bool showProtectors = true;
 
     public Sprite protectorFull;
+    public Sprite inactiveButton;
 
     public Image protector1;
     public Image protector2;
     public Image protector3;
 
+    private MainMenuController mainMenuController;
+
+    void Awake()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("MainMenuController");
+        if (obj)
+            mainMenuController = obj.GetComponent<MainMenuController>();
+    }
+
     void Start()
+    {
+        SetItem();
+    }
+
+    public void SetItem() 
     {
         Text label = GetComponentInChildren<Text>();
         if (label)
             label.text = levelNum;
+
+        if (!open)
+        {
+            Image objectImage = GetComponent<Image>();
+            if (objectImage)
+                objectImage.sprite = inactiveButton;
+        }
+
 
         if (!protectorFull)
         {
@@ -34,25 +58,31 @@ public class LevelListItem : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-        if (showProtectors && hatsNum > 0)
+        if (showProtectors && protectorsNum > 0)
         {
             protector1.transform.parent.gameObject.SetActive(true);
             protector1.sprite = protectorFull;
 
-            if (hatsNum > 1)
+            if (protectorsNum > 1)
                 protector2.sprite = protectorFull;
-            if (hatsNum > 2)
+            if (protectorsNum > 2)
                 protector3.sprite = protectorFull;
         }
         else
         {
             protector1.transform.parent.gameObject.SetActive(false);
         }
-
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        if (!mainMenuController)
+        {
+            Debug.LogError("LevelItem: MainMenuController reference missing.");
+            return;
+        }
+
+        if (open)
+            mainMenuController.LoadLevel(levelName);
     }
 }

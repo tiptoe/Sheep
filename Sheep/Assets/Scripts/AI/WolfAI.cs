@@ -74,7 +74,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
     void Start()
     {
         aiAgent = GetComponent<NavMeshAgent>();
-		anim = GetComponentInChildren<Animator> ();
+		//anim = GetComponentInChildren<Animator> ();
         lastMoodChange = moodChange + Random.Range(0, moodChangeRange * 2) - moodChangeRange;
         ChangeMood();
     }
@@ -555,15 +555,15 @@ public class WolfAI : MonoBehaviour, IAnimalAI
 	//Animation methods
 	
 	void CalmWolfAnimation(){
-		anim.SetBool ("Waiting", true);
+		//anim.SetBool ("Waiting", true);
 	}
 	
 	void RunningWolfAnimation(){
-		anim.SetBool ("Waiting", false);
+		//anim.SetBool ("Waiting", false);
 	}
 	
 	void EatingWolfAnimation(){
-		anim.SetTrigger("Eating");
+		//anim.SetTrigger("Eating");
 	}
 
    

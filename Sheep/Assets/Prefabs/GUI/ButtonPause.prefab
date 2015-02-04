@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11433620}
   - 114: {fileID: 11433622}
   - 114: {fileID: 11459838}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: ButtonPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}

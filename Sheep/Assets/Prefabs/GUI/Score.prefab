@@ -11,7 +11,8 @@ GameObject:
   - 222: {fileID: 22292904}
   - 114: {fileID: 11492904}
   - 114: {fileID: 11492906}
-  m_Layer: 5
+  - 225: {fileID: 22547960}
+  m_Layer: 2
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 270, y: 48.7999992}
   m_Pivot: {x: 1.36280859, y: 1.49294114}
+--- !u!225 &22547960
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192904}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

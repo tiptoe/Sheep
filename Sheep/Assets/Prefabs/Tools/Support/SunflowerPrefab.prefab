@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7549351fda630a4aa5ca1c0852e944c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepInterest: 2
-  wolfInterest: 1
+  sheepInterest: 10
+  wolfInterest: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4ff7f32cbf9bb46889c9957242d65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingTime: 2
+  eatingTime: 5
 --- !u!114 &11494974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +193,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &13500002
 SphereCollider:

@@ -35,7 +35,7 @@ public class LevelList : MonoBehaviour
             levelItem.levelNum = levelInfo.levelNum;
             levelItem.levelName = levelInfo.levelName;
             levelItem.protectorsNum = levelInfo.protectorsNum;
-            levelItem.transform.parent = transform;
+            levelItem.transform.SetParent(transform);
         }
     }
 }

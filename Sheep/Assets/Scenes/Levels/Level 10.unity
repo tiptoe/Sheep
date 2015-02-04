@@ -73,7 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-  m_NavMesh: {fileID: 19400000, guid: ff331e9756bcbe4469249c30c2d47874, type: 2}
+  m_NavMesh: {fileID: 19400000, guid: 2d2d3fbe75aa25042831ec6dd544dccf, type: 2}
 --- !u!1 &5501331
 GameObject:
   m_ObjectHideFlags: 0

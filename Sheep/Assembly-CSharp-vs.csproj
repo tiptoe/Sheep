@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Enums\AIStates.cs" />
      <Compile Include="Assets\Scripts\Enums\Animals.cs" />
      <Compile Include="Assets\Scripts\GUI\ButtonPause.cs" />
+     <Compile Include="Assets\Scripts\GUI\LevelListItem.cs" />
      <Compile Include="Assets\Scripts\GUI\ScoreChange.cs" />
      <Compile Include="Assets\Scripts\GUI\TimeHorizon.cs" />
      <Compile Include="Assets\Scripts\Objects\BorderBehaviour.cs" />

@@ -32,6 +32,8 @@ public class GUIController : MonoBehaviour
     public Slider AudioSoundsSlider;
 
     private LevelController _LevelController;
+	public GameController _GameController;
+
     private int scoreValue;
     private List<GameObject> inGameGUI;
 
@@ -39,10 +41,13 @@ public class GUIController : MonoBehaviour
     {
         GameObject obj = GameObject.FindGameObjectWithTag("LevelController");
         if (obj)
+		{
             _LevelController = obj.GetComponent<LevelController>();
-        else
-            Debug.LogError("GUIController: LevelController wasn't found.");
-
+			_GameController = _LevelController.FindGameController();
+		}else
+		{
+			Debug.LogError("GUIController: LevelController wasn't found.");
+		}
         InitializeGUI();
     }
 
@@ -94,6 +99,12 @@ public class GUIController : MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevelName);
     }
+
+	public void ChangeToNext()
+	{
+		if(_LevelController.IsLevelDone || _GameController.gameProgress.Levels[_LevelController.Id].Enabled)
+			Application.LoadLevel("Level " + (_LevelController.Id + 1).ToString());
+	}
 
     public void SetScore(int newScoreValue)
     {

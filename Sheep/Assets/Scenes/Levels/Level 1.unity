@@ -2973,7 +2973,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 89c75eb698ee86d4bad419d153af66c9, type: 2}
   m_PrefabInternal: {fileID: 720725270}
   m_GameObject: {fileID: 350337773}
-  m_LocalRotation: {x: .320403963, y: -.630350232, z: .630350053, w: .320403934}
+  m_LocalRotation: {x: .320403993, y: -.630350292, z: .630350113, w: .320403963}
   m_LocalPosition: {x: .0819705203, y: 0, z: 1.06099415}
   m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children: []
@@ -4113,7 +4113,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 89c75eb698ee86d4bad419d153af66c9, type: 2}
   m_PrefabInternal: {fileID: 1889534475}
   m_GameObject: {fileID: 489412274}
-  m_LocalRotation: {x: .608250797, y: -.360597938, z: .360597879, w: .608250976}
+  m_LocalRotation: {x: .608250856, y: -.360597968, z: .360597908, w: .608251035}
   m_LocalPosition: {x: -.555074751, y: 0, z: 2.19657111}
   m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children: []
@@ -4191,11 +4191,23 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 510048774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892325198}
+        m_MethodName: ChangeToNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &510048774
@@ -10283,6 +10295,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -11224,7 +11237,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4cadf85047f75f848a3bd9b8a8d09354, type: 2}
   m_PrefabInternal: {fileID: 2088874543}
   m_GameObject: {fileID: 1338951677}
-  m_LocalRotation: {x: .686222851, y: .170582205, z: -.170582205, w: .686222851}
+  m_LocalRotation: {x: .686222792, y: .17058219, z: -.17058219, w: .686222792}
   m_LocalPosition: {x: .839999974, y: 1, z: -4}
   m_LocalScale: {x: .789290845, y: .477181107, z: 1.40840423}
   m_Children: []
@@ -11775,6 +11788,7 @@ MonoBehaviour:
   BronzeThreshold: 1200
   SilverThreshold: 1680
   GoldThreshold: 2160
+  IsLevelDone: 0
   _GUIController: {fileID: 1892325198}
   _GameController: {fileID: 0}
 --- !u!1 &1395249944
@@ -14041,7 +14055,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400004, guid: b6aeaf4458fb54340bd4b6cdff02982a, type: 2}
   m_PrefabInternal: {fileID: 830530196}
   m_GameObject: {fileID: 1692301680}
-  m_LocalRotation: {x: 0, y: .594088078, z: 0, w: .804400086}
+  m_LocalRotation: {x: 0, y: .594088018, z: 0, w: .804400027}
   m_LocalPosition: {x: 11.4300013, y: 0, z: 8.98999977}
   m_LocalScale: {x: 1.56237304, y: 1, z: 1.5623728}
   m_Children:
@@ -15167,7 +15181,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400004, guid: b6aeaf4458fb54340bd4b6cdff02982a, type: 2}
   m_PrefabInternal: {fileID: 988103777}
   m_GameObject: {fileID: 1862751521}
-  m_LocalRotation: {x: 0, y: -.211074978, z: 0, w: .977469921}
+  m_LocalRotation: {x: 0, y: -.211074963, z: 0, w: .977469862}
   m_LocalPosition: {x: -8.21000004, y: 0, z: -.99000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15650,6 +15664,7 @@ MonoBehaviour:
   AudioToggle: {fileID: 1439815092}
   AudioBackgroundSlider: {fileID: 456520334}
   AudioSoundsSlider: {fileID: 1123234681}
+  _GameController: {fileID: 0}
 --- !u!1 &1892714869
 GameObject:
   m_ObjectHideFlags: 0
@@ -15988,6 +16003,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1892325198}
+    - target: {fileID: 11400006, guid: 5d6c0dd709ec5464c91738a840a4d0f5, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1892325198}
+    - target: {fileID: 11400006, guid: 5d6c0dd709ec5464c91738a840a4d0f5, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToNext
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d6c0dd709ec5464c91738a840a4d0f5, type: 2}
   m_RootGameObject: {fileID: 1474152455}

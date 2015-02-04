@@ -19,6 +19,7 @@ public class LevelController : MonoBehaviour {
 	public int BronzeThreshold = 100;
 	public int SilverThreshold = 500;
 	public int GoldThreshold = 1000;
+	public bool IsLevelDone = false;
 
 	public GUIController _GUIController;
 	public GameController _GameController;
@@ -123,7 +124,10 @@ public class LevelController : MonoBehaviour {
 		int stars = 0;
 
 		if(Score >= BronzeThreshold && aliveSheeps > 0)
+		{
+			IsLevelDone = true;
 			stars++;
+		}
 
 		if(Score >= SilverThreshold && aliveSheeps > 0)
 			stars++;

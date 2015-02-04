@@ -138,7 +138,7 @@ public class LevelController : MonoBehaviour {
 
 
 		_GameController.SaveProgress(Id,Score,stars);
-		_GUIController.EndRound(stars);
+		_GUIController.EndRound(stars, Score);
 	}
 
 	private void SpawnWolves()

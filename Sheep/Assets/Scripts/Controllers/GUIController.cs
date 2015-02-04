@@ -20,6 +20,7 @@ public class GUIController : MonoBehaviour
 
     public GameObject PauseMenu;
     public GameObject EndRoundMenu;
+    public GameObject blockingPane;
 
     public Sprite rewardON;
     public Sprite rewardOFF;
@@ -48,6 +49,7 @@ public class GUIController : MonoBehaviour
 		{
 			Debug.LogError("GUIController: LevelController wasn't found.");
 		}
+
         InitializeGUI();
     }
 
@@ -58,7 +60,7 @@ public class GUIController : MonoBehaviour
         AddAudioButtonsListeners();
     }
 
-    public void EndRound(int rewards = 3)
+    public void EndRound(int rewards, int score)
     {
         reward1.sprite = rewardOFF;
         reward2.sprite = rewardOFF;
@@ -72,12 +74,20 @@ public class GUIController : MonoBehaviour
             reward3.sprite = rewardON;
 
         EndRoundMenu.SetActive(true);
+        if (blockingPane)
+            blockingPane.SetActive(true);
+
+        Text scoreText = EndRoundMenu.GetComponentInChildren<Text>();
+        if (scoreText)
+            scoreText.text = "Score: " + score;
     }
 
     public void ChangeToPause()
     {
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
+        if (blockingPane)
+            blockingPane.SetActive(true);
         //ShowInGameGUI(false);
     }
 
@@ -85,6 +95,8 @@ public class GUIController : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
+        if (blockingPane)
+            blockingPane.SetActive(false);
         //ShowInGameGUI(true);
     }
 
@@ -146,6 +158,7 @@ public class GUIController : MonoBehaviour
         {
             //item.SetActive(false);
             item.transform.SetParent(canvas.transform);
+            item.transform.SetAsFirstSibling();
             itemTransform = item.transform as RectTransform;
             itemTransform.anchoredPosition = Vector2.zero;
         }

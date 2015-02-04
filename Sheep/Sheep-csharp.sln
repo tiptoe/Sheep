@@ -5,8 +5,6 @@ Project("{572B2541-C97A-EC9D-07CA-45DAD125559B}") = "Sheep", "Assembly-CSharp-fi
 EndProject
 Project("{572B2541-C97A-EC9D-07CA-45DAD125559B}") = "Sheep", "Assembly-CSharp-vs.csproj", "{294BD625-35DA-AA20-906E-E9813E2C3A5A}"
 EndProject
-Project("{572B2541-C97A-EC9D-07CA-45DAD125559B}") = "Sheep", "Assembly-CSharp-Editor-vs.csproj", "{29B0A03E-571F-9DD8-5E5A-EF2C5ED83BD8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,15 +19,11 @@ Global
 		{294BD625-35DA-AA20-906E-E9813E2C3A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{294BD625-35DA-AA20-906E-E9813E2C3A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{294BD625-35DA-AA20-906E-E9813E2C3A5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29B0A03E-571F-9DD8-5E5A-EF2C5ED83BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29B0A03E-571F-9DD8-5E5A-EF2C5ED83BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29B0A03E-571F-9DD8-5E5A-EF2C5ED83BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29B0A03E-571F-9DD8-5E5A-EF2C5ED83BD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																													GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

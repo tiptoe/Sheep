@@ -121,7 +121,7 @@ MonoBehaviour:
   - {fileID: 0}
   Wolves: []
   Score: 0
-  SheepPenalty: 1000
+  SheepPenalty: 500
   WolfBonus: 250
   BronzeThreshold: 1800
   SilverThreshold: 2520

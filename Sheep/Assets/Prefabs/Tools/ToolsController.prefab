@@ -722,7 +722,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 188860, guid: 51ee0c46a2b61144e982e8938281a7a4, type: 2}
   amount: 1
   infinityAmount: 0
-  score: -100
+  score: -500
 --- !u!114 &11416400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,7 +907,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: 6f3d0cbff8d43c64a8ded8401f77f35f, type: 2}
   amount: 0
   infinityAmount: 1
-  score: -5
+  score: -50
   minLength: 1
   maxLength: 5
   fenceObstacle: {fileID: 100000, guid: be47cafa4724aac44b71d43394c5e048, type: 2}
@@ -1145,7 +1145,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: fc969e2c48ff2f44581238f726d53c16, type: 2}
   amount: 3
   infinityAmount: 0
-  score: -50
+  score: -100
 --- !u!114 &11455612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   toolPrefab: {fileID: 100000, guid: 3fb8106698b4de04fa5061dc900ff557, type: 2}
   amount: 0
   infinityAmount: 0
-  score: -50
+  score: -100
 --- !u!114 &11457740
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,6 +38,7 @@ public class LevelController : MonoBehaviour {
 		aliveSheeps = Sheeps.Length;
 		aliveWolves = Wolves.Length;
 		Time.timeScale = 1;
+		++Length;
         lastIntervalTime = Length;
         timePercentage = 0;
 	}
@@ -121,13 +122,13 @@ public class LevelController : MonoBehaviour {
 	{
 		int stars = 0;
 
-		if(Score >= BronzeThreshold)
+		if(Score >= BronzeThreshold && aliveSheeps > 0)
 			stars++;
 
-		if(Score >= SilverThreshold)
+		if(Score >= SilverThreshold && aliveSheeps > 0)
 			stars++;
 
-		if(Score >= GoldThreshold)
+		if(Score >= GoldThreshold && aliveSheeps > 0)
 			stars++;
 
 

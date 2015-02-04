@@ -512,13 +512,21 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 	/*IEnumerator InstantiateBlood(){
 		yield return new WaitForSeconds (2);
 		Instantiate (blood, transform.position, transform.rotation);
-		}*/
+		}
 
-    void OnDestroy()
+	//protection to not instantiate blood after closing
+	bool isQuitting = false;
+
+	void OnApplicationQuit()
+	{
+		isQuitting = true;
+	}
+	
+	void OnDestroy()
     {
-		if(blood!=null){
+		if(blood!=null || !isQuitting){
         Instantiate(blood, transform.position, transform.rotation);
     	}
 	}
-
+	*/
 }

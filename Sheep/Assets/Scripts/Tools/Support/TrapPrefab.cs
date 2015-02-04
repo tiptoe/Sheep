@@ -3,6 +3,25 @@ using System.Collections;
 
 public class TrapPrefab : MonoBehaviour 
 {
+    public float activateTime = 3.0f;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (activateTime <= 0)
+        {
+            if (!collider.enabled)
+            {
+                collider.enabled = true;
+            }
+        }
+        else
+        {
+            activateTime = activateTime - Time.deltaTime;
+        }
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Sheep") || other.gameObject.CompareTag("Wolf"))

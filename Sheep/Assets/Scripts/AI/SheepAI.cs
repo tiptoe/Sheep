@@ -492,6 +492,10 @@ public class SheepAI : MonoBehaviour, IAnimalAI
     {
 		AudioSource.PlayClipAtPoint(audio.clip,transform.position,audio.volume);
         DeathSheepAnimation();
+        if (blood != null)
+        {
+            Instantiate(blood, transform.position, transform.rotation);
+        }
     }
 
 	//Animation methods

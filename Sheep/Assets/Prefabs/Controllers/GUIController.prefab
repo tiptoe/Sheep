@@ -46,14 +46,15 @@ MonoBehaviour:
   timeHorizon: {fileID: 0}
   PauseMenu: {fileID: 0}
   EndRoundMenu: {fileID: 0}
-  RewardON: {fileID: 21300000, guid: 19916478e1aa35949be04bd78196a26d, type: 3}
-  RewardOFF: {fileID: 21300000, guid: c4218ada0e938df46a4cf6c460983181, type: 3}
-  Reward1: {fileID: 0}
-  Reward2: {fileID: 0}
-  Reward3: {fileID: 0}
+  rewardON: {fileID: 21300000, guid: db551d4f98cfcae4daa4922f93c27a6b, type: 3}
+  rewardOFF: {fileID: 21300000, guid: 9a586170d470ea94db2cd67574113610, type: 3}
+  reward1: {fileID: 0}
+  reward2: {fileID: 0}
+  reward3: {fileID: 0}
   AudioToggle: {fileID: 0}
   AudioBackgroundSlider: {fileID: 0}
   AudioSoundsSlider: {fileID: 0}
+  _GameController: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

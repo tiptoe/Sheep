@@ -35,7 +35,7 @@ public class CarAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (porsche != null) {
-			porsche.transform.position = porsche.transform.position + vect * velocity * 0.01f;
+			porsche.transform.position = porsche.transform.position + vect * velocity * Time.deltaTime;
 			if ((Camera.main.WorldToViewportPoint (porsche.transform.position).x > 1.1f) || (Camera.main.WorldToViewportPoint (porsche.transform.position).y > 1.1f) || 
 				(Camera.main.WorldToViewportPoint (porsche.transform.position).x < -0.1f) || (Camera.main.WorldToViewportPoint (porsche.transform.position).y < -0.1f)) {
 				Destroy (porsche);

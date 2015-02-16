@@ -288,7 +288,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         List<Vector3> possibleRuntargets = new List<Vector3>();
         float maxDistance =0;
         Vector3 maxVector = Vector3.forward;
-        for (int i = 10; i <= 170; i = i + 5)
+        for (int i = 5; i <= 175; i = i + 5)
         {
             NavMeshHit hit;
             if (NavMesh.Raycast(transform.position,  Quaternion.Euler(0,-90 + 5 * i,0)*dir,out hit, -1))
@@ -310,6 +310,7 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         {
             vectorTarget = maxVector;
             aiAgent.SetDestination(maxVector);
+            lastMoodChange = lastMoodChange / 1.5f;
         }
         else
         {

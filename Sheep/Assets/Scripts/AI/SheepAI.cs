@@ -148,8 +148,8 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         Vector3 newTarget;
         ///4.5f je bulharská konstanta na testování (v tomto případě jen chodit okolo)
         do {
-        float r = Random.Range(2.5f, 4.5f);
-        float angle = Random.Range(0, 90.0f);
+        float r = Random.Range(2.7f, 4.8f);
+        float angle = Random.Range(5, 95.0f);
         angle = transform.rotation.eulerAngles.y + angle;
         float x = r * Mathf.Cos(angle);
         float y = r * Mathf.Sin(angle);
@@ -282,7 +282,8 @@ public class SheepAI : MonoBehaviour, IAnimalAI
 
     void ChangeTargetScared( Vector3 scaredThing)
     {
-       // Debug.Log("scared target");
+      //  Debug.Log("loc/abs" + transform.localPosition + "::" + transform.position);
+       // Debug.Log("scared target" + transform.position+"::" + Time.timeSinceLevelLoad);
 		Vector3 dir = this.transform.position - scaredThing;
         dir = (dir.normalized) * 80.0f;
         List<Vector3> possibleRuntargets = new List<Vector3>();
@@ -291,11 +292,12 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         for (int i = 5; i <= 175; i = i + 5)
         {
             NavMeshHit hit;
-            if (NavMesh.Raycast(transform.position,  Quaternion.Euler(0,-90 + 5 * i,0)*dir,out hit, -1))
+            Vector3 tryReach = Vector3.ClampMagnitude(Quaternion.Euler(0, -90 + 5 * i, 0) * dir, 10.0f);
+            if (NavMesh.Raycast(transform.position, tryReach, out hit, -1))
             {
                 if(!hit.hit) {
-                    possibleRuntargets.Add(transform.position);
-                }else if (hit.distance > 20)
+                    possibleRuntargets.Add(tryReach);
+                }else if (hit.distance >6)
                 {
                     possibleRuntargets.Add(hit.position);
                 }
@@ -308,17 +310,39 @@ public class SheepAI : MonoBehaviour, IAnimalAI
         }
         if (possibleRuntargets.Count == 0)
         {
-            vectorTarget = maxVector;
-            aiAgent.SetDestination(maxVector);
-            lastMoodChange = lastMoodChange / 1.5f;
+          Debug.Log("run back");
+            NavMeshHit hit;
+            Vector3 tryReach = Vector3.ClampMagnitude(Quaternion.Euler(0,-180, 0) * dir, 10.0f);
+            if (NavMesh.Raycast(transform.position, tryReach, out hit, -1))
+            {
+                if (!hit.hit)
+                {
+                    
+                   // vectorTarget = maxVector;
+                    Debug.Log(tryReach);
+                    aiAgent.SetDestination(tryReach);
+                    //lastMoodChange = lastMoodChange;
+                }
+                else if (hit.distance > Vector3.Distance(transform.position,maxVector))
+                {
+                  
+                   // vectorTarget = maxVector;
+                    Debug.Log(tryReach);
+                    aiAgent.SetDestination(tryReach);
+                   // lastMoodChange = lastMoodChange / 1.5f;
+                }
+
+            }
+          
         }
         else
         {
             int r = Random.Range(0, possibleRuntargets.Count);
             vectorTarget = possibleRuntargets[r];
             aiAgent.SetDestination(possibleRuntargets[r]);
+           // Debug.Log("scared target:"+ vectorTarget);
         }
-        Debug.Log("runn");
+        //Debug.Log("runn");
         RunningSheepAnimation();
         aiAgent.Resume();
         aiAgent.speed = defSpeedChange * speed * scaredSpeedChange;
@@ -421,33 +445,43 @@ public class SheepAI : MonoBehaviour, IAnimalAI
            Vector3 start, end;
             RaycastHit[] hits;
 
-            start = new Vector3(this.transform.position.x, 0.5f, this.transform.position.y);
-            end = new Vector3(path.corners[0].x, 0.5f, path.corners[0].z);
+            /*start = new Vector3(this.transform.position.x, 0.5f, this.transform.position.y);
+           end = new Vector3(path.corners[0].x, 0.5f, path.corners[0].z);
             hits = Physics.RaycastAll(start, start - end, Vector3.Distance(start, end));
+           
             foreach (RaycastHit hittedObj in hits)
             {
-                if (hittedObj.collider.gameObject.tag.Equals("Tool"))
+               if (hittedObj.collider.gameObject.tag.Equals("Tool"))
                 {
-                    ChangeTargetScared(hittedObj.point);
-                   Debug.Log("kolize na první pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
+                Debug.Log("kolize na první pozici: " + hittedObj.point + "::" + hittedObj.transform.position);    
+               ChangeTargetScared(hittedObj.point);
+                  
+                   break;
                 }
-            }
+               else
+               {
+                   Debug.Log("hitted na první pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
+                }
+            }*/
             // jak moc dopředu kontrolovat cestu čim víc dopředu tím víc vyděšených ovcí i zbytečně, 
-            for (int i = 0; i < Mathf.Min(path.corners.Length-1,5); i++)
+           for (int i = 0; i < Mathf.Min(path.corners.Length-1,3); i++)
             {
                 start=new Vector3( path.corners[i].x, 0.5f, path.corners[i].z);
                 end = new Vector3(path.corners[i+1].x, 0.5f, path.corners[i+1].z);
                 hits = Physics.RaycastAll(start, start - end,Vector3.Distance(start,end));
                 foreach (RaycastHit hittedObj in hits)
                 {
-                    if (hittedObj.collider.gameObject.tag.Equals("Tool"))
-                    {
-                        ChangeTargetScared(hittedObj.point);
-                       Debug.Log("kolize na pozici: " + hittedObj.point + "::" + hittedObj.transform.position);
-                    }
+                   // if (hittedObj.collider.gameObject.tag.Equals("Tool"))
+                    //{
+                    //Debug.Log("kolize na pozici: " + hittedObj.point + "::" + hittedObj.transform.position);    
+                    //Debug.Log(hittedObj.point);
+                    ChangeTargetScared(hittedObj.point);
+                    return;
+                       
+                    //}
                 }
 
-            }
+           }
         }
         //Debug.Log("curious target");
         //Collider[] colliders = Physics.OverlapSphere(transform.position, observableArea);

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   Length: 60
-  SpawnWolvesAt: 30
+  SpawnWolvesAt: 40
   intervalPoints: 200
   intervalLength: 5
   Sheeps:
@@ -126,7 +126,7 @@ MonoBehaviour:
   BronzeThreshold: 1800
   SilverThreshold: 2520
   GoldThreshold: 3240
-  _GUIController: {fileID: 0}
+  IsLevelDone: 0
   _GameController: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

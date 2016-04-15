@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelController : MonoBehaviour {
 	public int Id = 0;
 	public float Length = 60;
-	public float SpawnWolvesAt = 30;
+	public float SpawnWolvesAt = 20;
     public int intervalPoints = 10;
     public float intervalLength = 5f;
     

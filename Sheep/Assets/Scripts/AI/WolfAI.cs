@@ -95,6 +95,7 @@ public class WolfAI : MonoBehaviour, IAnimalAI
         {
             case AIStates.Normal: UpdateNormal(); break;
             case AIStates.Tracking: UpdateTracking(); break;
+            case AIStates.Interested: UpdateTracking(); break;
             case AIStates.Hunting: UpdateHunting(); break;
             case AIStates.Eat: UpdateFull(); break;
         }
@@ -536,13 +537,20 @@ public class WolfAI : MonoBehaviour, IAnimalAI
                         wolfAI.DeadOccurs(other.gameObject.transform.position);
                     }
                 }
-
-                Debug.Log("snězena ovečka");
-                ChangeMood(AIStates.Eat);
-                sheep.SetDead();
-                controler.AnimalDied(Animals.Sheep);
-                Destroy(sheep.gameObject);
-                gameObjectTarget = null;
+                if (sheep != null)
+                {
+                    Debug.Log("snězena ovečka");
+                    ChangeMood(AIStates.Eat);
+                    sheep.SetDead();
+                    controler.AnimalDied(Animals.Sheep);
+                    Destroy(sheep.gameObject);
+                    gameObjectTarget = null;
+                }
+                else
+                {
+                    //something hapend
+                }
+              
             }
         }
         else
